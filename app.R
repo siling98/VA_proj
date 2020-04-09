@@ -1,71 +1,51 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
-# library(shiny)
-# 
-# # Define UI for application that draws a histogram
-# ui <- fluidPage(
-# 
-#     # Application title
-#     titlePanel("Old Faithful Geyser Data"),
-# 
-#     # Sidebar with a slider input for number of bins 
-#     sidebarLayout(
-#         sidebarPanel(
-#             sliderInput("bins",
-#                         "Number of bins:",
-#                         min = 1,
-#                         max = 50,
-#                         value = 30)
-#         ),
-# 
-#         # Show a plot of the generated distribution
-#         mainPanel(
-#            plotOutput("distPlot")
-#         )
-#     )
-# )
-# 
-# # Define server logic required to draw a histogram
-# server <- function(input, output) {
-# 
-#     output$distPlot <- renderPlot({
-#         # generate bins based on input$bins from ui.R
-#         x    <- faithful[, 2]
-#         bins <- seq(min(x), max(x), length.out = input$bins + 1)
-# 
-#         # draw the histogram with the specified number of bins
-#         hist(x, breaks = bins, col = 'darkgray', border = 'white')
-#     })
-# }
-# 
-# # Run the application 
-# shinyApp(ui = ui, server = server)
-
+#IS 428 Visual Analystics Group Project
+#Author: Group 6
 
 
 ## app.R ##
 library(shinydashboard)
 
 ui <- dashboardPage(
-    dashboardHeader(title = "Basic dashboard"),
-    dashboardSidebar(),
+    dashboardHeader(title = "StoryBoard",
+                    titleWidth = 350),
+    dashboardSidebar(
+        width = 350,
+        sidebarMenu(
+            menuItem("Introduction", tabName = "Intro"),
+            menuItem("Higher Education Ranking", tabName = "Ranking"),
+            menuItem("Enrollment", tabName = "Enrollment"),
+            menuItem("Government Expenditure", tabName = "Expenditure"),
+            menuItem("Graduate's Prospects", tabName = "Prospects")
+        )
+    ),
     dashboardBody(
         # Boxes need to be put in a row (or column)
-        fluidRow(
-            box(plotOutput("plot1", height = 250)),
+        tabItems(
             
-            box(
-                title = "Controls",
-                sliderInput("slider", "Number of observations:", 1, 100, 50)
+            tabItem(tabName = "Intro",
+                fluidRow(
+                    box(plotOutput("plot1", height = 250)),
+                    
+                    box(
+                        title = "Controls",
+                        sliderInput("slider", "Number of observations:", 1, 100, 50)
+                    )
+                )
+            ),
+            tabItem(tabName = "Ranking",
+                    h2("Singapore has increased its Higher Education and Training progressively and has maintained its top position since 2015-16.")    
+            ),
+            tabItem(tabName = "Enrollment",
+                h2("Singapore's Higher Education Enrollment")    
+            ),
+            tabItem(tabName = "Expenditure",
+                    h2("Government spending")    
+            ),
+            tabItem(tabName = "Prospects",
+                    h2("How much can University Graduate expect to Earn?")    
             )
         )
+            
     )
 )
 
