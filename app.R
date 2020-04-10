@@ -48,6 +48,8 @@ expenditure_sector <- expenditure_sector %>%
 # Graduate Employment Survey
 ges <- read_csv("data/cleaned/cleaned_GES.csv", col_types = "ffffnniiii")
 
+ges2 <- read_csv("data/cleaned/cleaned_GES2.csv", col_types = "ffffnniiiiii")
+
 ui <- dashboardPage(
     dashboardHeader(title = "StoryBoard",
                     titleWidth = 250),
@@ -186,6 +188,27 @@ ui <- dashboardPage(
                             width = 12,
                             align = "center",
                             plotlyOutput("ges_salary_percentile", width = "85%")
+                        )
+                    ),
+                    #heatmap
+                    fluidRow(
+                        column(3),
+                        column(6,
+                               sliderInput(inputId = "Year2",
+                                           label = "Year",
+                                           min = 2013,
+                                           max = 2018,
+                                           value = 2018,
+                                           sep = ""
+                               )
+                        ),
+                        column(3)
+                    ),
+                    fluidRow(
+                        column(
+                            width = 12,
+                            align = "center",
+                            plotlyOutput("ges_heatmap", width = "85%")
                         )
                     )
             )
@@ -331,47 +354,13 @@ server <- function(input, output) {
         data <- histdata[seq_len(input$slider)]
         hist(data)
     })
-    
+    ###start of enrollment
     output$Polyenrollement1 <- renderPlot({
         
         poly1 <- data_poly_enrollment_institute  %>%  filter(Year >= input$DateRange[1] & Year <= input$DateRange[2] & Sex == input$gender) %>% ggplot(aes(x=Year, y = Enrollment))
         poly1 <- poly1 + geom_line(col = Institute) 
         
         poly1
-    
-    })
-    
-    output$Polyenrollement1 <- renderPlot({
-        
-        poly1 <- data_poly_enrollment_institute  %>%  filter(Year >= input$DateRange[1] & Year <= input$DateRange[2] & Sex == input$gender) %>% ggplot(aes(x=Year, y = Enrollment, col = Institute))
-        poly1 <- poly1 + geom_line()
-        poly1
-        
-    })
-    
-    output$Unienrollment1 <- renderPlot({
-
-        uni1 <- data_uni_enrollment_institute  %>%  filter(Year >= input$DateRange[1] & Year <= input$DateRange[2] & Sex == input$gender) %>% ggplot(aes(x=Year, y = Enrollment))
-        uni1 <- uni1 + geom_line(aes(colour = Institute))
-        uni1
-
-    })
-    
-    output$Polyenrollement1 <- renderPlot({
-        
-        poly1 <- data_poly_enrollment_institute  %>%  filter(Year >= input$DateRange[1] & Year <= input$DateRange[2] & Sex == input$gender) %>% ggplot(aes(x=Year, y = Enrollment))
-        poly1 <- poly1 + geom_line(col = Institute) 
-        
-        poly1
-        
-    })
-    
-    output$Polyenrollement1 <- renderPlot({
-        
-        poly1 <- data_poly_enrollment_institute  %>%  filter(Year >= input$DateRange[1] & Year <= input$DateRange[2] & Sex == input$gender) %>% ggplot(aes(x=Year, y = Enrollment, col = Institute))
-        poly1 <- poly1 + geom_line()
-        poly1
-        
     })
     
     output$Unienrollment1 <- renderPlot({
@@ -430,6 +419,18 @@ server <- function(input, output) {
             theme(legend.position="none") +
             coord_equal()
         
+    })
+    #end of enrollment
+    
+    #heat map for dashboard4
+    output$ges_heatmap <- renderPlot({
+        ges2 <- filter(ges2, Year == input$Year2)
+        p <- plot_ly(x=ges2$Degree, y=ges2$University,
+                     z = ges2$Overall_Employment_Rate,
+                     type = "heatmap",
+                     colorscale= "Greys")
+        #            showscale = F) %>%
+        # layout(margin = list(l=1000))
     })
 }
 
