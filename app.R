@@ -192,8 +192,7 @@ ui <- dashboardPage(
                     ),
                     #heatmap
                     fluidRow(
-                        column(3),
-                        column(6,
+                        column(4,
                                sliderInput(inputId = "Year2",
                                            label = "Year",
                                            min = 2013,
@@ -202,7 +201,39 @@ ui <- dashboardPage(
                                            sep = ""
                                )
                         ),
-                        column(3)
+                        column(4,
+                               selectInput(inputId="school",label="Faculty/School/Field of Study", choices = c("Accountancy" = "Accountancy",
+                                                                                                               "Arts & Social Sciences" = "Arts & Social Sciences", 
+                                                                                                               "Business" = "Business", 
+                                                                                                               "Computing and Information Systems" = "Computing and Information Systems", 
+                                                                                                               "Dentistry" = "Dentistry", 
+                                                                                                               "Design & Environment" = "Design & Environment", 
+                                                                                                               "DigiPen Institute of Technology" = "DigiPen Institute of Technology" , 
+                                                                                                               "Economics" = "Economics", 
+                                                                                                               "Engineering" = "Engineering", 
+                                                                                                               "Law" = "Law", 
+                                                                                                               "Medicine" = "Medicine", 
+                                                                                                               "Multidisciplinary" = "Multidisciplinary", 
+                                                                                                               "National Institute of Education (NIE)" = "National Institute of Education (NIE)", 
+                                                                                                               "Newcastle University" = "Newcastle University", 
+                                                                                                               "Sciences" = "Sciences", 
+                                                                                                               "Singapore Institute of Technology" = "Singapore Institute of Technology", 
+                                                                                                               "Technische Universität München" = "Technische Universität München", 
+                                                                                                               "The Culinary Institute of America" = "The Culinary Institute of America", 
+                                                                                                               "Trinity College Dublin" = "Trinity College Dublin", 
+                                                                                                               "University of Glasgow" = "University of Glasgow", 
+                                                                                                               "University of Liverpool" = "University of Liverpool", 
+                                                                                                               "University of Manchester" = "University of Manchester", 
+                                                                                                               "University of Nevada, Las Vegas" = "University of Nevada, Las Vegas", 
+                                                                                                               "Wheelock College" = "Wheelock College"),
+                                           selected = "Engineering",multiple = F)
+                               
+                        ),
+                        column(4,
+                               selectInput(inputId="Hons",label="Honors/Cum Laude",choices = c("Yes"="Yes",
+                                                                                               "No"="No"),
+                                           selected = "No",multiple = F)
+                        )
                     ),
                     fluidRow(
                         column(
@@ -210,7 +241,7 @@ ui <- dashboardPage(
                             align = "center",
                             plotlyOutput("ges_heatmap", width = "85%")
                         )
-                    )
+                    ),
             )
         )
             
@@ -358,8 +389,7 @@ server <- function(input, output) {
     output$Polyenrollement1 <- renderPlot({
         
         poly1 <- data_poly_enrollment_institute  %>%  filter(Year >= input$DateRange[1] & Year <= input$DateRange[2] & Sex == input$gender) %>% ggplot(aes(x=Year, y = Enrollment))
-        poly1 <- poly1 + geom_line(col = Institute) 
-        
+        poly1 <- poly1 + geom_line(aes(colour = Institute))
         poly1
     })
     
@@ -423,12 +453,12 @@ server <- function(input, output) {
     #end of enrollment
     
     #heat map for dashboard4
-    output$ges_heatmap <- renderPlot({
-        ges2 <- filter(ges2, Year == input$Year2)
+    output$ges_heatmap <- renderPlotly({
+        ges2 <- filter(ges2, Year == input$Year2 & School == input$school)
         p <- plot_ly(x=ges2$Degree, y=ges2$University,
                      z = ges2$Overall_Employment_Rate,
                      type = "heatmap",
-                     colorscale= "Greys")
+                     colorscale= "Blue")
         #            showscale = F) %>%
         # layout(margin = list(l=1000))
     })
