@@ -45,6 +45,9 @@ expenditure_sector <- expenditure_sector %>%
     group_by(Year) %>%
     mutate(Percent = Expenditure / sum(Expenditure) * 100)
 
+# Graduate Employment Survey
+ges <- read_csv("data/cleaned/cleaned_GES.csv", col_types = "ffffnniiii")
+
 ui <- dashboardPage(
     dashboardHeader(title = "StoryBoard",
                     titleWidth = 250),
@@ -148,7 +151,38 @@ ui <- dashboardPage(
                     )
             ),
             tabItem(tabName = "Prospects",
-                    h2("How much can University Graduate expect to Earn?")    
+                    h2("How much can University Graduate expect to Earn?"),
+                    fluidRow(
+                        box(
+                            width = 6,
+                            htmlOutput("selectInput_University")
+                        ),
+                        box(
+                            width = 6,
+                            htmlOutput("selectInput_School")
+                        )
+                    ),
+                    fluidRow(
+                        column(
+                            width = 12,
+                            align = "center",
+                            plotlyOutput("ges_mean_salary_by_degree", width = "85%")
+                        )
+                    ),
+                    fluidRow(
+                        column(
+                            width = 12,
+                            align = "center",
+                            h2(textOutput("ges_salary_percentile_title"))
+                        )
+                    ),
+                    fluidRow(
+                        column(
+                            width = 12,
+                            align = "center",
+                            plotlyOutput("ges_salary_percentile", width = "85%")
+                        )
+                    )
             )
         )
             
@@ -213,6 +247,77 @@ server <- function(input, output) {
                     hoverinfo = "text",
                     text = ~paste("Type:", `School Type`, "<br>Year:", Year, "<br>Expenditure:", Expenditure)) %>%
             add_lines()
+    })
+    
+    # Graduate Employment Survey
+    output$selectInput_University <- renderUI({
+        selectInput("university", "University", choices = levels(ges$University), selected = "National University of Singapore")
+    })
+    
+    output$selectInput_School <- renderUI({
+        ges_university_school <- ges %>%
+            filter(University == input$university) %>%
+            droplevels()
+        
+        selectInput("school", "School/Faculty", choices = levels(ges_university_school$School), selected = "School of Computing")
+    })
+    
+    output$ges_mean_salary_by_degree <- renderPlotly({
+        ges_bar <- ges %>%
+            filter(Year == 2018,
+                   University == input$university,
+                   School == input$school) %>%
+            droplevels()
+        
+        ges_bar %>%
+            plot_ly(x = ~`Gross Monthly Mean`, y = ~Degree,
+                    hoverinfo = "text",
+                    text = ~paste0("The gross monthly mean salary of a person with ", tolower(Degree), " degree is $", `Gross Monthly Mean`, "."),
+                    key = ~Degree,
+                    source = "degree") %>%
+            add_bars() %>%
+            layout(xaxis = list(title = "Gross Monthly Mean"))
+    })
+    
+    output$ges_salary_percentile_title <- renderText({
+        ges_event <- event_data(event = "plotly_click", source = "degree")
+        
+        if (is.null(ges_event)) {
+            "Salary Percentiles for Bachelor of Computing (Computer Science) Degree"
+        } else {
+            paste("Salary Percentiles for", ges_event$key, "Degree")
+        }
+    })
+    
+    output$ges_salary_percentile <- renderPlotly({
+        ges_event <- event_data(event = "plotly_click", source = "degree")
+
+        if (is.null(ges_event)) {
+            ges_time <- ges %>%
+                filter(University == input$university,
+                       School == input$school,
+                       Degree == "Bachelor of Computing (Computer Science)") %>%
+                droplevels()
+
+            ges_time %>%
+                plot_ly(x = ~Year) %>%
+                add_trace(y = ~`Gross Monthly 25th Percentile`, name = "Gross Monthly 25th Percentile", type = "scatter", mode = "lines+markers") %>%
+                add_trace(y = ~`Gross Monthly Median`, name = "Gross Monthly Median", type = "scatter", mode = "lines+markers") %>%
+                add_trace(y = ~`Gross Monthly 75th Percentile`, name = "Gross Monthly 75th Percentile", type = "scatter", mode = "lines+markers") %>%
+                layout(yaxis = list(title = "Salary"))
+        } else {
+            ges_time <- ges %>%
+                filter(University == input$university,
+                       School == input$school,
+                       Degree == ges_event$key) %>%
+                droplevels()
+
+            ges_time %>%
+                plot_ly(x = ~Year) %>%
+                add_trace(y = ~`Gross Monthly 25th Percentile`, name = "Gross Monthly 25th Percentile", type = "scatter", mode = "lines+markers") %>%
+                add_trace(y = ~`Gross Monthly Median`, name = "Gross Monthly Median", type = "scatter", mode = "lines+markers") %>%
+                add_trace(y = ~`Gross Monthly 75th Percentile`, name = "Gross Monthly 75th Percentile", type = "scatter", mode = "lines+markers")
+        }
     })
     
     ###
