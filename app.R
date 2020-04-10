@@ -162,17 +162,23 @@ ui <- dashboardPage(
                     fluidRow(
                         box(
                             width = 6,
-                            htmlOutput("selectInput_University")
+                            # htmlOutput("selectInput_University")
+                            selectInput("university", "University",
+                                        choices = levels(ges$University),
+                                        selected = "National University of Singapore")
                         ),
                         box(
                             width = 6,
-                            htmlOutput("selectInput_School")
+                            # htmlOutput("selectInput_School")
+                            selectInput("school", "School/Faculty",
+                                        choices = NULL)
                         )
                     ),
                     fluidRow(
                         column(
                             width = 12,
                             align = "center",
+                            h3(textOutput("ges_mean_salary_by_degree_title")),
                             plotlyOutput("ges_mean_salary_by_degree", width = "85%")
                         )
                     ),
@@ -180,13 +186,7 @@ ui <- dashboardPage(
                         column(
                             width = 12,
                             align = "center",
-                            h2(textOutput("ges_salary_percentile_title"))
-                        )
-                    ),
-                    fluidRow(
-                        column(
-                            width = 12,
-                            align = "center",
+                            h3(textOutput("ges_salary_percentile_title")),
                             plotlyOutput("ges_salary_percentile", width = "85%")
                         )
                     ),
@@ -217,7 +217,7 @@ ui <- dashboardPage(
     )
 )
 
-server <- function(input, output) {
+server <- function(session, input, output) {
     set.seed(122)
     histdata <- rnorm(500)
     
@@ -278,17 +278,26 @@ server <- function(input, output) {
     })
     
     # Graduate Employment Survey
-    output$selectInput_University <- renderUI({
-        selectInput("university", "University", choices = levels(ges$University), selected = "National University of Singapore")
-    })
-    
-    output$selectInput_School <- renderUI({
+    observe({
         ges_university_school <- ges %>%
-            filter(University == input$university) %>%
+            filter(Year == 2018,
+                   University == input$university) %>%
             droplevels()
         
-        selectInput("school", "School/Faculty", choices = levels(ges_university_school$School), selected = "School of Computing")
+        updateSelectInput(session, "school", choices = levels(ges_university_school$School))
     })
+    
+    # output$selectInput_University <- renderUI({
+    #     selectInput("university", "University", choices = levels(ges$University), selected = "National University of Singapore")
+    # })
+    # 
+    # output$selectInput_School <- renderUI({
+    #     ges_university_school <- ges %>%
+    #         filter(University == input$university) %>%
+    #         droplevels()
+    #     
+    #     selectInput("school", "School/Faculty", choices = levels(ges_university_school$School), selected = "School of Computing")
+    # })
     
     output$ges_mean_salary_by_degree <- renderPlotly({
         ges_bar <- ges %>%
@@ -300,53 +309,149 @@ server <- function(input, output) {
         ges_bar %>%
             plot_ly(x = ~`Gross Monthly Mean`, y = ~Degree,
                     hoverinfo = "text",
-                    text = ~paste0("The gross monthly mean salary of a person with ", tolower(Degree), " degree is $", `Gross Monthly Mean`, "."),
+                    text = ~paste0("The gross monthly mean salary of a person with ", Degree, " degree in ", University, " is $", `Gross Monthly Mean`, "."),
                     key = ~Degree,
                     source = "degree") %>%
             add_bars() %>%
             layout(xaxis = list(title = "Gross Monthly Mean"))
     })
     
-    output$ges_salary_percentile_title <- renderText({
-        ges_event <- event_data(event = "plotly_click", source = "degree")
+    # output$ges_salary_percentile_title <- renderText({
+    #     ges_event <- event_data(event = "plotly_click", source = "degree")
+    #     
+    #     if (is.null(ges_event)) {
+    #         "Salary Percentiles for Bachelor of Computing (Computer Science) Degree"
+    #     } else {
+    #         paste("Salary Percentiles for", ges_event$key, "Degree")
+    #     }
+    # })
+    
+    observe({
+        ges_degree_2018 <- ges %>%
+            filter(Year == 2018,
+                   University == input$university,
+                   School == input$school) %>%
+            droplevels() %>%
+            filter(Degree == levels(Degree)[1]) %>%
+            droplevels()
         
-        if (is.null(ges_event)) {
-            "Salary Percentiles for Bachelor of Computing (Computer Science) Degree"
-        } else {
-            paste("Salary Percentiles for", ges_event$key, "Degree")
-        }
+        ges_time <- ges %>%
+            filter(University == input$university,
+                   School == input$school) %>%
+            droplevels() %>%
+            filter(Degree == as.character(ges_degree_2018$Degree)) %>%
+            droplevels()
+        
+        output$ges_mean_salary_by_degree_title <- renderText({
+            paste("Gross Monthly Mean Salary by Degree(s) under", input$school, "in", input$university)
+        })
+        
+        output$ges_salary_percentile_title <- renderText({
+            paste("Salary Percentiles for", levels(ges_time$Degree), "Degree from", input$university)
+        })
+        
+        output$ges_salary_percentile <- renderPlotly({
+            ges_time %>%
+                plot_ly(x = ~Year) %>%
+                add_trace(y = ~`Gross Monthly 25th Percentile`, name = "Gross Monthly 25th Percentile", type = "scatter", mode = "lines+markers",
+                          hoverinfo = "text",
+                          text = ~paste0("University: ", University,
+                                         "<br>School/Faculty: ", School,
+                                         "<br>Degree: ", Degree,
+                                         "<br>Year: ", Year,
+                                         "<br>25th Percentile: $", `Gross Monthly 25th Percentile`)) %>%
+                add_trace(y = ~`Gross Monthly Median`, name = "Gross Monthly Median", type = "scatter", mode = "lines+markers",
+                          hoverinfo = "text",
+                          text = ~paste0("University: ", University,
+                                         "<br>School/Faculty: ", School,
+                                         "<br>Degree: ", Degree,
+                                         "<br>Year: ", Year,
+                                         "<br>Median: $", `Gross Monthly Median`)) %>%
+                add_trace(y = ~`Gross Monthly 75th Percentile`, name = "Gross Monthly 75th Percentile", type = "scatter", mode = "lines+markers",
+                          hoverinfo = "text",
+                          text = ~paste0("University: ", University,
+                                         "<br>School/Faculty: ", School,
+                                         "<br>Degree: ", Degree,
+                                         "<br>Year: ", Year,
+                                         "<br>75th Percentile: $", `Gross Monthly 75th Percentile`)) %>%
+                layout(yaxis = list(title = "Salary"))
+        })
     })
     
-    output$ges_salary_percentile <- renderPlotly({
-        ges_event <- event_data(event = "plotly_click", source = "degree")
-
-        if (is.null(ges_event)) {
-            ges_time <- ges %>%
-                filter(University == input$university,
-                       School == input$school,
-                       Degree == "Bachelor of Computing (Computer Science)") %>%
-                droplevels()
-
-            ges_time %>%
-                plot_ly(x = ~Year) %>%
-                add_trace(y = ~`Gross Monthly 25th Percentile`, name = "Gross Monthly 25th Percentile", type = "scatter", mode = "lines+markers") %>%
-                add_trace(y = ~`Gross Monthly Median`, name = "Gross Monthly Median", type = "scatter", mode = "lines+markers") %>%
-                add_trace(y = ~`Gross Monthly 75th Percentile`, name = "Gross Monthly 75th Percentile", type = "scatter", mode = "lines+markers") %>%
-                layout(yaxis = list(title = "Salary"))
-        } else {
-            ges_time <- ges %>%
-                filter(University == input$university,
-                       School == input$school,
-                       Degree == ges_event$key) %>%
-                droplevels()
-
-            ges_time %>%
-                plot_ly(x = ~Year) %>%
-                add_trace(y = ~`Gross Monthly 25th Percentile`, name = "Gross Monthly 25th Percentile", type = "scatter", mode = "lines+markers") %>%
-                add_trace(y = ~`Gross Monthly Median`, name = "Gross Monthly Median", type = "scatter", mode = "lines+markers") %>%
-                add_trace(y = ~`Gross Monthly 75th Percentile`, name = "Gross Monthly 75th Percentile", type = "scatter", mode = "lines+markers")
-        }
+    ges_event <- reactive({
+        event_data(event = "plotly_click", source = "degree")
     })
+    
+    observeEvent(ges_event(), {
+        ges_time <- ges %>%
+            filter(University == input$university,
+                   School == input$school,
+                   Degree == ges_event()$key) %>%
+            droplevels()
+        
+        output$ges_salary_percentile_title <- renderText({
+            paste("Salary Percentiles for", ges_event()$key, "Degree from", input$university)
+        })
+        
+        output$ges_salary_percentile <- renderPlotly({
+            ges_time %>%
+                plot_ly(x = ~Year) %>%
+                add_trace(y = ~`Gross Monthly 25th Percentile`, name = "Gross Monthly 25th Percentile", type = "scatter", mode = "lines+markers",
+                          hoverinfo = "text",
+                          text = ~paste0("University: ", University,
+                                         "<br>School/Faculty: ", School,
+                                         "<br>Degree: ", Degree,
+                                         "<br>Year: ", Year,
+                                         "<br>25th Percentile: $", `Gross Monthly 25th Percentile`)) %>%
+                add_trace(y = ~`Gross Monthly Median`, name = "Gross Monthly Median", type = "scatter", mode = "lines+markers",
+                          hoverinfo = "text",
+                          text = ~paste0("University: ", University,
+                                         "<br>School/Faculty: ", School,
+                                         "<br>Degree: ", Degree,
+                                         "<br>Year: ",Year,
+                                         "<br>Median: $", `Gross Monthly Median`)) %>%
+                add_trace(y = ~`Gross Monthly 75th Percentile`, name = "Gross Monthly 75th Percentile", type = "scatter", mode = "lines+markers",
+                          hoverinfo = "text",
+                          text = ~paste0("University: ", University,
+                                         "<br>School/Faculty: ", School,
+                                         "<br>Degree: ", Degree,
+                                         "<br>Year: ", Year,
+                                         "<br>75th Percentile: $", `Gross Monthly 75th Percentile`)) %>%
+                layout(yaxis = list(title = "Salary"))
+        })
+    })
+    
+    # output$ges_salary_percentile <- renderPlotly({
+    #     ges_event <- event_data(event = "plotly_click", source = "degree")
+    # 
+    #     if (is.null(ges_event)) {
+    #         ges_time <- ges %>%
+    #             filter(University == input$university,
+    #                    School == input$school) %>%
+    #             droplevels() %>%
+    #             filter(Degree == sample(Degree, 1)) %>%
+    #             droplevels()
+    #     } else {
+    #         ges_time <- ges %>%
+    #             filter(University == input$university,
+    #                    School == input$school,
+    #                    Degree == ges_event$key) %>%
+    #             droplevels()
+    #     }
+    #     
+    #     ges_time %>%
+    #         plot_ly(x = ~Year) %>%
+    #         add_trace(y = ~`Gross Monthly 25th Percentile`, name = "Gross Monthly 25th Percentile", type = "scatter", mode = "lines+markers",
+    #                   hoverinfo = "text",
+    #                   text = ~paste0("Degree: ", Degree, "<br>Year: ", Year, "<br>25th Percentile: $", `Gross Monthly 25th Percentile`)) %>%
+    #         add_trace(y = ~`Gross Monthly Median`, name = "Gross Monthly Median", type = "scatter", mode = "lines+markers",
+    #                   hoverinfo = "text",
+    #                   text = ~paste0("Degree: ", Degree, "<br>Year: ", Year, "<br>Median: $", `Gross Monthly Median`)) %>%
+    #         add_trace(y = ~`Gross Monthly 75th Percentile`, name = "Gross Monthly 75th Percentile", type = "scatter", mode = "lines+markers",
+    #                   hoverinfo = "text",
+    #                   text = ~paste0("Degree: ", Degree, "<br>Year: ", Year, "<br>75th Percentile: $", `Gross Monthly 75th Percentile`)) %>%
+    #         layout(title = ~Degree, yaxis = list(title = "Salary"))
+    # })
     
     ###
     
@@ -423,7 +528,7 @@ server <- function(input, output) {
     #end of enrollment
     
     #heat map for dashboard4
-    output$ges_heatmap <- renderPlot({
+    output$ges_heatmap <- renderPlotly({
         ges2 <- filter(ges2, Year == input$Year2)
         p <- plot_ly(x=ges2$Degree, y=ges2$University,
                      z = ges2$Overall_Employment_Rate,
