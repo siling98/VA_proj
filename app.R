@@ -11,6 +11,7 @@ library(randomcoloR)
 library(plotly)
 library(crosstalk)
 library(shinydashboard)
+library(packcircles)
 
 # Global Competitiveness Index
 gci <- read_csv("data/cleaned/cleaned_GCI.csv", col_types = "ffif")
@@ -26,6 +27,15 @@ data_enrollment_institute <- read.csv("data/cleaned/cleaned_enrollment-by-instit
 data_enrollment_institute <- filter(data_enrollment_institute, Enrollment > 0)
 data_poly_enrollment_institute <- filter(data_enrollment_institute, Institute_Type == "Polytechnic")
 data_uni_enrollment_institute <- filter(data_enrollment_institute, Institute_Type == "University")
+
+#Enrollment by course
+data_enrollment_course <- read_csv("data/cleaned/cleaned_enrollment-by-first-degree.csv")
+data_enrollment_course <- filter(data_enrollment_course, Enrollment > 0)
+data_enrollment_course <- filter(data_enrollment_course, First_Degree != "Males Total")
+data_enrollment_course <- filter(data_enrollment_course, First_Degree != "Females Total")
+data_enrollment_course <- filter(data_enrollment_course, First_Degree != "Total")
+data_poly_enrollment_course <- filter(data_enrollment_course, Institute_Type == "Polytechnic")
+data_uni_enrollment_course <- filter(data_enrollment_course, Institute_Type == "University")
 
 # Government Expenditure
 expenditure_sector <- read_csv("data/cleaned/cleaned_expenditure_by_sector.csv", col_types = "ffn")
@@ -102,7 +112,23 @@ ui <- dashboardPage(
                     box(title = "University", width = 6, solidHeader = TRUE, status = "primary", plotOutput("Unienrollment1", height = 250, click = "plot_click1"))
                     
                 ),
-                verbatimTextOutput("clickData")
+                fluidRow(
+                    column(4,
+                           sliderInput(inputId = "Year",
+                                       label = "Year",
+                                       min = 1993,
+                                       max = 2018,
+                                       value = 2018,
+                                       sep = ""
+                           )
+                    )
+                ),
+                
+                fluidRow(
+                    box(title = "Polytechnic (by course)", width = 6, solidHeader = TRUE, status = "primary", plotOutput("Polyenrollement2", height = 250)),
+                    box(title = "University (by course)", width = 6, solidHeader = TRUE, status = "primary", plotOutput("Unienrollment2", height = 250))
+                )
+                
             ),
             tabItem(tabName = "Expenditure",
                     h2("Government Expenditure"),
@@ -221,9 +247,80 @@ server <- function(input, output) {
 
     })
     
-    output$clickData <- renderPrint(({
-        input$plot_click1
-    }))
+    output$Polyenrollement1 <- renderPlot({
+        
+        poly1 <- data_poly_enrollment_institute  %>%  filter(Year >= input$DateRange[1] & Year <= input$DateRange[2] & Sex == input$gender) %>% ggplot(aes(x=Year, y = Enrollment))
+        poly1 <- poly1 + geom_line(col = Institute) 
+        
+        poly1
+        
+    })
+    
+    output$Polyenrollement1 <- renderPlot({
+        
+        poly1 <- data_poly_enrollment_institute  %>%  filter(Year >= input$DateRange[1] & Year <= input$DateRange[2] & Sex == input$gender) %>% ggplot(aes(x=Year, y = Enrollment, col = Institute))
+        poly1 <- poly1 + geom_line()
+        poly1
+        
+    })
+    
+    output$Unienrollment1 <- renderPlot({
+        
+        uni1 <- data_uni_enrollment_institute  %>%  filter(Year >= input$DateRange[1] & Year <= input$DateRange[2] & Sex == input$gender) %>% ggplot(aes(x=Year, y = Enrollment))
+        uni1 <- uni1 + geom_line(aes(colour = Institute))
+        uni1
+        
+    })
+    
+    output$Polyenrollement2 <- renderPlot({
+        filterdata1 <- filter(data_poly_enrollment_course, Year == input$Year & Sex == input$gender)
+        
+        data1 <- data.frame(group=paste("Group", filterdata1$First_Degree), value=filterdata1$Enrollment) 
+        data1$text <- paste("name: ",data1$group, "\n", "value:", data1$value)
+        
+        packing1 <- circleProgressiveLayout(data1$value, sizetype='area')
+        data1 <- cbind(data1, packing1)
+        dat1.gg <- circleLayoutVertices(packing1, npoints=50)
+        
+        ggplot() + 
+            
+            # Make the bubbles
+            geom_polygon(data = dat1.gg, aes(x, y, group = id, fill=as.factor(id)), colour = "black", alpha = 0.6) +
+            
+            # Add text in the center of each bubble + control its size
+            geom_text(data = data1, aes(x, y, size=2, label = group)) +
+            scale_size_continuous(range = c(1,4)) +
+            
+            # General theme:
+            theme_void() + 
+            theme(legend.position="none") +
+            coord_equal()
+    })
+    
+    output$Unienrollment2 <- renderPlot({
+        filterdata2 <- filter(data_uni_enrollment_course, Year == input$Year & Sex == input$gender)
+        
+        data2 <- data.frame(group=paste("Group", filterdata2$First_Degree), value=filterdata2$Enrollment) 
+        
+        packing2 <- circleProgressiveLayout(data2$value, sizetype='area')
+        data2 <- cbind(data2, packing2)
+        
+        dat2.gg <- circleLayoutVertices(packing2, npoints=50)
+        ggplot() + 
+            
+            # Make the bubbles
+            geom_polygon(data = dat2.gg, aes(x, y, group = id, fill=as.factor(id)), colour = "black", alpha = 0.6) +
+            
+            # Add text in the center of each bubble + control its size
+            geom_text(data = data2, aes(x, y, size=value, label = group)) +
+            scale_size_continuous(range = c(1,4)) +
+            
+            # General theme:
+            theme_void() + 
+            theme(legend.position="none") +
+            coord_equal()
+        
+    })
 }
 
 shinyApp(ui, server)
