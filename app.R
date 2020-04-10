@@ -86,7 +86,6 @@ ui <- dashboardPage(
                 h2("Singapore's Higher Education Enrollment"),
                 
                 fluidRow(
-                    column(1),
                     column(6,
                         sliderInput(inputId = "DateRange",
                             label = "Year Range",
@@ -96,7 +95,7 @@ ui <- dashboardPage(
                             sep = ""
                         )
                     ),
-                    column(5,
+                    column(6,
                            selectInput(inputId="gender",label="Gender",choices = c("All"="MF",
                                                                                              "Male"="M",
                                                                                              "Female"="F"),
@@ -116,7 +115,7 @@ ui <- dashboardPage(
                     
                 ),
                 fluidRow(
-                    column(4,
+                    column(6,
                            sliderInput(inputId = "Year",
                                        label = "Year",
                                        min = 1993,
@@ -124,6 +123,12 @@ ui <- dashboardPage(
                                        value = 2018,
                                        sep = ""
                            )
+                    ),
+                    column(6,
+                           selectInput(inputId="gender2",label="Gender",choices = c("All"="MF",
+                                                                                   "Male"="M",
+                                                                                   "Female"="F"),
+                                       selected = "All",multiple = F),
                     )
                 ),
                 
@@ -378,7 +383,7 @@ server <- function(input, output) {
     })
     
     output$Polyenrollement2 <- renderPlot({
-        filterdata1 <- filter(data_poly_enrollment_course, Year == input$Year & Sex == input$gender)
+        filterdata1 <- filter(data_poly_enrollment_course, Year == input$Year & Sex == input$gender2)
         
         data1 <- data.frame(group=paste("Group", filterdata1$First_Degree), value=filterdata1$Enrollment) 
         data1$text <- paste("name: ",data1$group, "\n", "value:", data1$value)
@@ -403,7 +408,7 @@ server <- function(input, output) {
     })
     
     output$Unienrollment2 <- renderPlot({
-        filterdata2 <- filter(data_uni_enrollment_course, Year == input$Year & Sex == input$gender)
+        filterdata2 <- filter(data_uni_enrollment_course, Year == input$Year & Sex == input$gender2)
         
         data2 <- data.frame(group=paste("Group", filterdata2$First_Degree), value=filterdata2$Enrollment) 
         
