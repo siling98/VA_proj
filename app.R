@@ -27,6 +27,14 @@ data_enrollment_institute <- filter(data_enrollment_institute, Enrollment > 0)
 data_poly_enrollment_institute <- filter(data_enrollment_institute, Institute_Type == "Polytechnic")
 data_uni_enrollment_institute <- filter(data_enrollment_institute, Institute_Type == "University")
 
+# Government Expenditure
+expenditure_sector <- read_csv("data/cleaned/cleaned_expenditure_by_sector.csv", col_types = "ffn")
+expenditure_education <- read_csv("data/cleaned/cleaned_expenditure_by_education.csv", col_types = "ffn")
+
+expenditure_sector <- expenditure_sector %>%
+    group_by(Year) %>%
+    mutate(Percent = Expenditure / sum(Expenditure) * 100)
+
 ui <- dashboardPage(
     dashboardHeader(title = "StoryBoard",
                     titleWidth = 250),
@@ -97,7 +105,21 @@ ui <- dashboardPage(
                 verbatimTextOutput("clickData")
             ),
             tabItem(tabName = "Expenditure",
-                    h2("Government spending")    
+                    h2("Government Expenditure"),
+                    fluidRow(
+                        box(
+                            width = 12,
+                            title = "Expenditure by Sector",
+                            plotlyOutput("expenditure_by_sector")
+                        )
+                    ),
+                    fluidRow(
+                        box(
+                            width = 12,
+                            title = "Expenditure by Sector",
+                            plotlyOutput("expenditure_by_education")
+                        )
+                    )
             ),
             tabItem(tabName = "Prospects",
                     h2("How much can University Graduate expect to Earn?")    
@@ -148,6 +170,26 @@ server <- function(input, output) {
                        xaxis = list(title = "Year"))
         }
     })
+    
+    # Government Expenditure
+    output$expenditure_by_sector <- renderPlotly({
+        expenditure_sector %>%
+            plot_ly(x = ~Year, y = ~Percent, color = ~fct_rev(Sector),
+                    hoverinfo = "text",
+                    text = ~paste0("The government spent ", round(Percent, 2), "% of the total expenditure on ", tolower(Sector), " in ", Year, ".")) %>%
+            add_bars() %>%
+            layout(barmode = "stack")
+    })
+    
+    output$expenditure_by_education <- renderPlotly({
+        expenditure_education %>%
+            plot_ly(x = ~Year, y = ~Expenditure, color = ~`School Type`,
+                    hoverinfo = "text",
+                    text = ~paste("Type:", `School Type`, "<br>Year:", Year, "<br>Expenditure:", Expenditure)) %>%
+            add_lines()
+    })
+    
+    ###
     
     output$plot1 <- renderPlot({
         data <- histdata[seq_len(input$slider)]
