@@ -1,0 +1,1222 @@
+﻿index,Institute,Enrollment,Year,Sex,Institute_Type
+1,Nanyang Polytechnic,0,1982,F,Polytechnic
+2,Nanyang Polytechnic,0,1983,F,Polytechnic
+3,Nanyang Polytechnic,0,1984,F,Polytechnic
+4,Nanyang Polytechnic,0,1985,F,Polytechnic
+5,Nanyang Polytechnic,0,1986,F,Polytechnic
+6,Nanyang Polytechnic,0,1987,F,Polytechnic
+7,Nanyang Polytechnic,0,1988,F,Polytechnic
+8,Nanyang Polytechnic,0,1989,F,Polytechnic
+9,Nanyang Polytechnic,0,1990,F,Polytechnic
+10,Nanyang Polytechnic,0,1991,F,Polytechnic
+11,Nanyang Polytechnic,580,1992,F,Polytechnic
+12,Nanyang Polytechnic,1946,1993,F,Polytechnic
+13,Nanyang Polytechnic,3199,1994,F,Polytechnic
+14,Nanyang Polytechnic,4066,1995,F,Polytechnic
+15,Nanyang Polytechnic,4381,1996,F,Polytechnic
+16,Nanyang Polytechnic,4620,1997,F,Polytechnic
+17,Nanyang Polytechnic,5129,1998,F,Polytechnic
+18,Nanyang Polytechnic,5647,1999,F,Polytechnic
+19,Nanyang Polytechnic,5989,2000,F,Polytechnic
+20,Nanyang Polytechnic,6379,2001,F,Polytechnic
+21,Nanyang Polytechnic,6892,2002,F,Polytechnic
+22,Nanyang Polytechnic,7456,2003,F,Polytechnic
+23,Nanyang Polytechnic,7875,2004,F,Polytechnic
+24,Nanyang Polytechnic,8010,2005,F,Polytechnic
+25,Nanyang Polytechnic,7913,2006,F,Polytechnic
+26,Nanyang Polytechnic,7732,2007,F,Polytechnic
+27,Nanyang Polytechnic,7866,2008,F,Polytechnic
+28,Nanyang Polytechnic,8150,2009,F,Polytechnic
+29,Nanyang Polytechnic,8387,2010,F,Polytechnic
+30,Nanyang Polytechnic,8440,2011,F,Polytechnic
+31,Nanyang Polytechnic,8197,2012,F,Polytechnic
+32,Nanyang Polytechnic,8242,2013,F,Polytechnic
+33,Nanyang Polytechnic,8189,2014,F,Polytechnic
+34,Nanyang Polytechnic,8177,2015,F,Polytechnic
+35,Nanyang Polytechnic,7661,2016,F,Polytechnic
+36,Nanyang Polytechnic,7398,2017,F,Polytechnic
+37,Nanyang Polytechnic,7304,2018,F,Polytechnic
+38,Nanyang Polytechnic,0,1982,MF,Polytechnic
+39,Nanyang Polytechnic,0,1983,MF,Polytechnic
+40,Nanyang Polytechnic,0,1984,MF,Polytechnic
+41,Nanyang Polytechnic,0,1985,MF,Polytechnic
+42,Nanyang Polytechnic,0,1986,MF,Polytechnic
+43,Nanyang Polytechnic,0,1987,MF,Polytechnic
+44,Nanyang Polytechnic,0,1988,MF,Polytechnic
+45,Nanyang Polytechnic,0,1989,MF,Polytechnic
+46,Nanyang Polytechnic,0,1990,MF,Polytechnic
+47,Nanyang Polytechnic,0,1991,MF,Polytechnic
+48,Nanyang Polytechnic,699,1992,MF,Polytechnic
+49,Nanyang Polytechnic,3944,1993,MF,Polytechnic
+50,Nanyang Polytechnic,5785,1994,MF,Polytechnic
+51,Nanyang Polytechnic,7291,1995,MF,Polytechnic
+52,Nanyang Polytechnic,7764,1996,MF,Polytechnic
+53,Nanyang Polytechnic,8271,1997,MF,Polytechnic
+54,Nanyang Polytechnic,9277,1998,MF,Polytechnic
+55,Nanyang Polytechnic,10514,1999,MF,Polytechnic
+56,Nanyang Polytechnic,11463,2000,MF,Polytechnic
+57,Nanyang Polytechnic,12385,2001,MF,Polytechnic
+58,Nanyang Polytechnic,13105,2002,MF,Polytechnic
+59,Nanyang Polytechnic,13754,2003,MF,Polytechnic
+60,Nanyang Polytechnic,14233,2004,MF,Polytechnic
+61,Nanyang Polytechnic,14643,2005,MF,Polytechnic
+62,Nanyang Polytechnic,15001,2006,MF,Polytechnic
+63,Nanyang Polytechnic,14874,2007,MF,Polytechnic
+64,Nanyang Polytechnic,15225,2008,MF,Polytechnic
+65,Nanyang Polytechnic,15656,2009,MF,Polytechnic
+66,Nanyang Polytechnic,16183,2010,MF,Polytechnic
+67,Nanyang Polytechnic,16408,2011,MF,Polytechnic
+68,Nanyang Polytechnic,16076,2012,MF,Polytechnic
+69,Nanyang Polytechnic,16266,2013,MF,Polytechnic
+70,Nanyang Polytechnic,16092,2014,MF,Polytechnic
+71,Nanyang Polytechnic,15842,2015,MF,Polytechnic
+72,Nanyang Polytechnic,15035,2016,MF,Polytechnic
+73,Nanyang Polytechnic,14734,2017,MF,Polytechnic
+74,Nanyang Polytechnic,14715,2018,MF,Polytechnic
+75,Nanyang Polytechnic,0,1982,M,Polytechnic
+76,Nanyang Polytechnic,0,1983,M,Polytechnic
+77,Nanyang Polytechnic,0,1984,M,Polytechnic
+78,Nanyang Polytechnic,0,1985,M,Polytechnic
+79,Nanyang Polytechnic,0,1986,M,Polytechnic
+80,Nanyang Polytechnic,0,1987,M,Polytechnic
+81,Nanyang Polytechnic,0,1988,M,Polytechnic
+82,Nanyang Polytechnic,0,1989,M,Polytechnic
+83,Nanyang Polytechnic,0,1990,M,Polytechnic
+84,Nanyang Polytechnic,0,1991,M,Polytechnic
+85,Nanyang Polytechnic,119,1992,M,Polytechnic
+86,Nanyang Polytechnic,1998,1993,M,Polytechnic
+87,Nanyang Polytechnic,2586,1994,M,Polytechnic
+88,Nanyang Polytechnic,3225,1995,M,Polytechnic
+89,Nanyang Polytechnic,3383,1996,M,Polytechnic
+90,Nanyang Polytechnic,3651,1997,M,Polytechnic
+91,Nanyang Polytechnic,4148,1998,M,Polytechnic
+92,Nanyang Polytechnic,4867,1999,M,Polytechnic
+93,Nanyang Polytechnic,5474,2000,M,Polytechnic
+94,Nanyang Polytechnic,6006,2001,M,Polytechnic
+95,Nanyang Polytechnic,6213,2002,M,Polytechnic
+96,Nanyang Polytechnic,6298,2003,M,Polytechnic
+97,Nanyang Polytechnic,6358,2004,M,Polytechnic
+98,Nanyang Polytechnic,6633,2005,M,Polytechnic
+99,Nanyang Polytechnic,7088,2006,M,Polytechnic
+100,Nanyang Polytechnic,7142,2007,M,Polytechnic
+101,Nanyang Polytechnic,7359,2008,M,Polytechnic
+102,Nanyang Polytechnic,7506,2009,M,Polytechnic
+103,Nanyang Polytechnic,7796,2010,M,Polytechnic
+104,Nanyang Polytechnic,7968,2011,M,Polytechnic
+105,Nanyang Polytechnic,7879,2012,M,Polytechnic
+106,Nanyang Polytechnic,8024,2013,M,Polytechnic
+107,Nanyang Polytechnic,7903,2014,M,Polytechnic
+108,Nanyang Polytechnic,7665,2015,M,Polytechnic
+109,Nanyang Polytechnic,7374,2016,M,Polytechnic
+110,Nanyang Polytechnic,7336,2017,M,Polytechnic
+111,Nanyang Polytechnic,7411,2018,M,Polytechnic
+112,Ngee Ann Polytechnic,1153,1982,F,Polytechnic
+113,Ngee Ann Polytechnic,1650,1983,F,Polytechnic
+114,Ngee Ann Polytechnic,2374,1984,F,Polytechnic
+115,Ngee Ann Polytechnic,2993,1985,F,Polytechnic
+116,Ngee Ann Polytechnic,3470,1986,F,Polytechnic
+117,Ngee Ann Polytechnic,3910,1987,F,Polytechnic
+118,Ngee Ann Polytechnic,4037,1988,F,Polytechnic
+119,Ngee Ann Polytechnic,4477,1989,F,Polytechnic
+120,Ngee Ann Polytechnic,4817,1990,F,Polytechnic
+121,Ngee Ann Polytechnic,5316,1991,F,Polytechnic
+122,Ngee Ann Polytechnic,5527,1992,F,Polytechnic
+123,Ngee Ann Polytechnic,5473,1993,F,Polytechnic
+124,Ngee Ann Polytechnic,5624,1994,F,Polytechnic
+125,Ngee Ann Polytechnic,5858,1995,F,Polytechnic
+126,Ngee Ann Polytechnic,6113,1996,F,Polytechnic
+127,Ngee Ann Polytechnic,6169,1997,F,Polytechnic
+128,Ngee Ann Polytechnic,6001,1998,F,Polytechnic
+129,Ngee Ann Polytechnic,6211,1999,F,Polytechnic
+130,Ngee Ann Polytechnic,6419,2000,F,Polytechnic
+131,Ngee Ann Polytechnic,6623,2001,F,Polytechnic
+132,Ngee Ann Polytechnic,6626,2002,F,Polytechnic
+133,Ngee Ann Polytechnic,6534,2003,F,Polytechnic
+134,Ngee Ann Polytechnic,6347,2004,F,Polytechnic
+135,Ngee Ann Polytechnic,6500,2005,F,Polytechnic
+136,Ngee Ann Polytechnic,6719,2006,F,Polytechnic
+137,Ngee Ann Polytechnic,7007,2007,F,Polytechnic
+138,Ngee Ann Polytechnic,7214,2008,F,Polytechnic
+139,Ngee Ann Polytechnic,7436,2009,F,Polytechnic
+140,Ngee Ann Polytechnic,7655,2010,F,Polytechnic
+141,Ngee Ann Polytechnic,7703,2011,F,Polytechnic
+142,Ngee Ann Polytechnic,7788,2012,F,Polytechnic
+143,Ngee Ann Polytechnic,7866,2013,F,Polytechnic
+144,Ngee Ann Polytechnic,7758,2014,F,Polytechnic
+145,Ngee Ann Polytechnic,7465,2015,F,Polytechnic
+146,Ngee Ann Polytechnic,7243,2016,F,Polytechnic
+147,Ngee Ann Polytechnic,7304,2017,F,Polytechnic
+148,Ngee Ann Polytechnic,7469,2018,F,Polytechnic
+149,Ngee Ann Polytechnic,3660,1982,MF,Polytechnic
+150,Ngee Ann Polytechnic,4825,1983,MF,Polytechnic
+151,Ngee Ann Polytechnic,6919,1984,MF,Polytechnic
+152,Ngee Ann Polytechnic,8516,1985,MF,Polytechnic
+153,Ngee Ann Polytechnic,9617,1986,MF,Polytechnic
+154,Ngee Ann Polytechnic,10237,1987,MF,Polytechnic
+155,Ngee Ann Polytechnic,10448,1988,MF,Polytechnic
+156,Ngee Ann Polytechnic,11341,1989,MF,Polytechnic
+157,Ngee Ann Polytechnic,11995,1990,MF,Polytechnic
+158,Ngee Ann Polytechnic,12759,1991,MF,Polytechnic
+159,Ngee Ann Polytechnic,13330,1992,MF,Polytechnic
+160,Ngee Ann Polytechnic,13353,1993,MF,Polytechnic
+161,Ngee Ann Polytechnic,13637,1994,MF,Polytechnic
+162,Ngee Ann Polytechnic,14249,1995,MF,Polytechnic
+163,Ngee Ann Polytechnic,14480,1996,MF,Polytechnic
+164,Ngee Ann Polytechnic,14760,1997,MF,Polytechnic
+165,Ngee Ann Polytechnic,14300,1998,MF,Polytechnic
+166,Ngee Ann Polytechnic,14433,1999,MF,Polytechnic
+167,Ngee Ann Polytechnic,14378,2000,MF,Polytechnic
+168,Ngee Ann Polytechnic,14317,2001,MF,Polytechnic
+169,Ngee Ann Polytechnic,13989,2002,MF,Polytechnic
+170,Ngee Ann Polytechnic,13690,2003,MF,Polytechnic
+171,Ngee Ann Polytechnic,13417,2004,MF,Polytechnic
+172,Ngee Ann Polytechnic,13715,2005,MF,Polytechnic
+173,Ngee Ann Polytechnic,14258,2006,MF,Polytechnic
+174,Ngee Ann Polytechnic,14687,2007,MF,Polytechnic
+175,Ngee Ann Polytechnic,15123,2008,MF,Polytechnic
+176,Ngee Ann Polytechnic,15417,2009,MF,Polytechnic
+177,Ngee Ann Polytechnic,15942,2010,MF,Polytechnic
+178,Ngee Ann Polytechnic,16139,2011,MF,Polytechnic
+179,Ngee Ann Polytechnic,16430,2012,MF,Polytechnic
+180,Ngee Ann Polytechnic,16581,2013,MF,Polytechnic
+181,Ngee Ann Polytechnic,16227,2014,MF,Polytechnic
+182,Ngee Ann Polytechnic,15611,2015,MF,Polytechnic
+183,Ngee Ann Polytechnic,14866,2016,MF,Polytechnic
+184,Ngee Ann Polytechnic,14599,2017,MF,Polytechnic
+185,Ngee Ann Polytechnic,14543,2018,MF,Polytechnic
+186,Ngee Ann Polytechnic,2507,1982,M,Polytechnic
+187,Ngee Ann Polytechnic,3175,1983,M,Polytechnic
+188,Ngee Ann Polytechnic,4545,1984,M,Polytechnic
+189,Ngee Ann Polytechnic,5523,1985,M,Polytechnic
+190,Ngee Ann Polytechnic,6147,1986,M,Polytechnic
+191,Ngee Ann Polytechnic,6327,1987,M,Polytechnic
+192,Ngee Ann Polytechnic,6411,1988,M,Polytechnic
+193,Ngee Ann Polytechnic,6864,1989,M,Polytechnic
+194,Ngee Ann Polytechnic,7178,1990,M,Polytechnic
+195,Ngee Ann Polytechnic,7443,1991,M,Polytechnic
+196,Ngee Ann Polytechnic,7803,1992,M,Polytechnic
+197,Ngee Ann Polytechnic,7880,1993,M,Polytechnic
+198,Ngee Ann Polytechnic,8013,1994,M,Polytechnic
+199,Ngee Ann Polytechnic,8391,1995,M,Polytechnic
+200,Ngee Ann Polytechnic,8367,1996,M,Polytechnic
+201,Ngee Ann Polytechnic,8591,1997,M,Polytechnic
+202,Ngee Ann Polytechnic,8299,1998,M,Polytechnic
+203,Ngee Ann Polytechnic,8222,1999,M,Polytechnic
+204,Ngee Ann Polytechnic,7959,2000,M,Polytechnic
+205,Ngee Ann Polytechnic,7694,2001,M,Polytechnic
+206,Ngee Ann Polytechnic,7363,2002,M,Polytechnic
+207,Ngee Ann Polytechnic,7156,2003,M,Polytechnic
+208,Ngee Ann Polytechnic,7070,2004,M,Polytechnic
+209,Ngee Ann Polytechnic,7215,2005,M,Polytechnic
+210,Ngee Ann Polytechnic,7539,2006,M,Polytechnic
+211,Ngee Ann Polytechnic,7680,2007,M,Polytechnic
+212,Ngee Ann Polytechnic,7909,2008,M,Polytechnic
+213,Ngee Ann Polytechnic,7981,2009,M,Polytechnic
+214,Ngee Ann Polytechnic,8287,2010,M,Polytechnic
+215,Ngee Ann Polytechnic,8436,2011,M,Polytechnic
+216,Ngee Ann Polytechnic,8642,2012,M,Polytechnic
+217,Ngee Ann Polytechnic,8715,2013,M,Polytechnic
+218,Ngee Ann Polytechnic,8469,2014,M,Polytechnic
+219,Ngee Ann Polytechnic,8146,2015,M,Polytechnic
+220,Ngee Ann Polytechnic,7623,2016,M,Polytechnic
+221,Ngee Ann Polytechnic,7295,2017,M,Polytechnic
+222,Ngee Ann Polytechnic,7074,2018,M,Polytechnic
+223,NTU,57,1982,F,University
+224,NTU,120,1983,F,University
+225,NTU,230,1984,F,University
+226,NTU,253,1985,F,University
+227,NTU,302,1986,F,University
+228,NTU,1486,1987,F,University
+229,NTU,1750,1988,F,University
+230,NTU,2123,1989,F,University
+231,NTU,2689,1990,F,University
+232,NTU,3139,1991,F,University
+233,NTU,3543,1992,F,University
+234,NTU,3802,1993,F,University
+235,NTU,4220,1994,F,University
+236,NTU,4741,1995,F,University
+237,NTU,5030,1996,F,University
+238,NTU,5312,1997,F,University
+239,NTU,5494,1998,F,University
+240,NTU,5740,1999,F,University
+241,NTU,6223,2000,F,University
+242,NTU,6504,2001,F,University
+243,NTU,6822,2002,F,University
+244,NTU,6830,2003,F,University
+245,NTU,7469,2004,F,University
+246,NTU,8094,2005,F,University
+247,NTU,8797,2006,F,University
+248,NTU,9769,2007,F,University
+249,NTU,10409,2008,F,University
+250,NTU,11105,2009,F,University
+251,NTU,11389,2010,F,University
+252,NTU,11354,2011,F,University
+253,NTU,11386,2012,F,University
+254,NTU,11517,2013,F,University
+255,NTU,11623,2014,F,University
+256,NTU,11860,2015,F,University
+257,NTU,11633,2016,F,University
+258,NTU,11079,2017,F,University
+259,NTU,10896,2018,F,University
+260,NTU,582,1982,MF,University
+261,NTU,1267,1983,MF,University
+262,NTU,1945,1984,MF,University
+263,NTU,2078,1985,MF,University
+264,NTU,2202,1986,MF,University
+265,NTU,3940,1987,MF,University
+266,NTU,4400,1988,MF,University
+267,NTU,5475,1989,MF,University
+268,NTU,6812,1990,MF,University
+269,NTU,8712,1991,MF,University
+270,NTU,9900,1992,MF,University
+271,NTU,10410,1993,MF,University
+272,NTU,11052,1994,MF,University
+273,NTU,11545,1995,MF,University
+274,NTU,12186,1996,MF,University
+275,NTU,12760,1997,MF,University
+276,NTU,13318,1998,MF,University
+277,NTU,13849,1999,MF,University
+278,NTU,14583,2000,MF,University
+279,NTU,15008,2001,MF,University
+280,NTU,15598,2002,MF,University
+281,NTU,15764,2003,MF,University
+282,NTU,16837,2004,MF,University
+283,NTU,17777,2005,MF,University
+284,NTU,19114,2006,MF,University
+285,NTU,20206,2007,MF,University
+286,NTU,21097,2008,MF,University
+287,NTU,22450,2009,MF,University
+288,NTU,22862,2010,MF,University
+289,NTU,23040,2011,MF,University
+290,NTU,22862,2012,MF,University
+291,NTU,22777,2013,MF,University
+292,NTU,23021,2014,MF,University
+293,NTU,23512,2015,MF,University
+294,NTU,23495,2016,MF,University
+295,NTU,22934,2017,MF,University
+296,NTU,22813,2018,MF,University
+297,NTU,525,1982,M,University
+298,NTU,1147,1983,M,University
+299,NTU,1715,1984,M,University
+300,NTU,1825,1985,M,University
+301,NTU,1900,1986,M,University
+302,NTU,2454,1987,M,University
+303,NTU,2650,1988,M,University
+304,NTU,3352,1989,M,University
+305,NTU,4123,1990,M,University
+306,NTU,5573,1991,M,University
+307,NTU,6357,1992,M,University
+308,NTU,6608,1993,M,University
+309,NTU,6832,1994,M,University
+310,NTU,6804,1995,M,University
+311,NTU,7156,1996,M,University
+312,NTU,7448,1997,M,University
+313,NTU,7824,1998,M,University
+314,NTU,8109,1999,M,University
+315,NTU,8360,2000,M,University
+316,NTU,8504,2001,M,University
+317,NTU,8776,2002,M,University
+318,NTU,8934,2003,M,University
+319,NTU,9368,2004,M,University
+320,NTU,9683,2005,M,University
+321,NTU,10317,2006,M,University
+322,NTU,10437,2007,M,University
+323,NTU,10688,2008,M,University
+324,NTU,11345,2009,M,University
+325,NTU,11473,2010,M,University
+326,NTU,11686,2011,M,University
+327,NTU,11476,2012,M,University
+328,NTU,11260,2013,M,University
+329,NTU,11398,2014,M,University
+330,NTU,11652,2015,M,University
+331,NTU,11862,2016,M,University
+332,NTU,11855,2017,M,University
+333,NTU,11917,2018,M,University
+334,NUS,5563,1982,F,University
+335,NUS,6596,1983,F,University
+336,NUS,7076,1984,F,University
+337,NUS,7396,1985,F,University
+338,NUS,7581,1986,F,University
+339,NUS,6822,1987,F,University
+340,NUS,7490,1988,F,University
+341,NUS,7857,1989,F,University
+342,NUS,8107,1990,F,University
+343,NUS,7972,1991,F,University
+344,NUS,8096,1992,F,University
+345,NUS,8276,1993,F,University
+346,NUS,8644,1994,F,University
+347,NUS,9172,1995,F,University
+348,NUS,9663,1996,F,University
+349,NUS,10063,1997,F,University
+350,NUS,10326,1998,F,University
+351,NUS,10814,1999,F,University
+352,NUS,11341,2000,F,University
+353,NUS,11781,2001,F,University
+354,NUS,11653,2002,F,University
+355,NUS,11036,2003,F,University
+356,NUS,11372,2004,F,University
+357,NUS,11326,2005,F,University
+358,NUS,11766,2006,F,University
+359,NUS,12396,2007,F,University
+360,NUS,12663,2008,F,University
+361,NUS,12944,2009,F,University
+362,NUS,13067,2010,F,University
+363,NUS,13066,2011,F,University
+364,NUS,13295,2012,F,University
+365,NUS,13532,2013,F,University
+366,NUS,14042,2014,F,University
+367,NUS,14423,2015,F,University
+368,NUS,14617,2016,F,University
+369,NUS,14600,2017,F,University
+370,NUS,14981,2018,F,University
+371,NUS,11093,1982,MF,University
+372,NUS,11939,1983,MF,University
+373,NUS,12721,1984,MF,University
+374,NUS,13617,1985,MF,University
+375,NUS,14150,1986,MF,University
+376,NUS,13238,1987,MF,University
+377,NUS,14317,1988,MF,University
+378,NUS,14645,1989,MF,University
+379,NUS,15193,1990,MF,University
+380,NUS,14597,1991,MF,University
+381,NUS,14922,1992,MF,University
+382,NUS,15395,1993,MF,University
+383,NUS,16137,1994,MF,University
+384,NUS,16984,1995,MF,University
+385,NUS,17669,1996,MF,University
+386,NUS,18174,1997,MF,University
+387,NUS,18791,1998,MF,University
+388,NUS,19873,1999,MF,University
+389,NUS,21233,2000,MF,University
+390,NUS,22172,2001,MF,University
+391,NUS,22169,2002,MF,University
+392,NUS,22149,2003,MF,University
+393,NUS,21781,2004,MF,University
+394,NUS,22105,2005,MF,University
+395,NUS,22836,2006,MF,University
+396,NUS,23578,2007,MF,University
+397,NUS,24086,2008,MF,University
+398,NUS,24798,2009,MF,University
+399,NUS,25189,2010,MF,University
+400,NUS,25513,2011,MF,University
+401,NUS,25979,2012,MF,University
+402,NUS,26156,2013,MF,University
+403,NUS,26797,2014,MF,University
+404,NUS,27288,2015,MF,University
+405,NUS,27702,2016,MF,University
+406,NUS,28134,2017,MF,University
+407,NUS,29037,2018,MF,University
+408,NUS,5530,1982,M,University
+409,NUS,5343,1983,M,University
+410,NUS,5645,1984,M,University
+411,NUS,6221,1985,M,University
+412,NUS,6569,1986,M,University
+413,NUS,6416,1987,M,University
+414,NUS,6827,1988,M,University
+415,NUS,6788,1989,M,University
+416,NUS,7086,1990,M,University
+417,NUS,6625,1991,M,University
+418,NUS,6826,1992,M,University
+419,NUS,7119,1993,M,University
+420,NUS,7493,1994,M,University
+421,NUS,7812,1995,M,University
+422,NUS,8006,1996,M,University
+423,NUS,8111,1997,M,University
+424,NUS,8465,1998,M,University
+425,NUS,9059,1999,M,University
+426,NUS,9892,2000,M,University
+427,NUS,10391,2001,M,University
+428,NUS,10516,2002,M,University
+429,NUS,11113,2003,M,University
+430,NUS,10409,2004,M,University
+431,NUS,10779,2005,M,University
+432,NUS,11070,2006,M,University
+433,NUS,11182,2007,M,University
+434,NUS,11423,2008,M,University
+435,NUS,11854,2009,M,University
+436,NUS,12122,2010,M,University
+437,NUS,12447,2011,M,University
+438,NUS,12684,2012,M,University
+439,NUS,12624,2013,M,University
+440,NUS,12755,2014,M,University
+441,NUS,12865,2015,M,University
+442,NUS,13085,2016,M,University
+443,NUS,13534,2017,M,University
+444,NUS,14056,2018,M,University
+445,Republic Polytechnic,0,1982,F,Polytechnic
+446,Republic Polytechnic,0,1983,F,Polytechnic
+447,Republic Polytechnic,0,1984,F,Polytechnic
+448,Republic Polytechnic,0,1985,F,Polytechnic
+449,Republic Polytechnic,0,1986,F,Polytechnic
+450,Republic Polytechnic,0,1987,F,Polytechnic
+451,Republic Polytechnic,0,1988,F,Polytechnic
+452,Republic Polytechnic,0,1989,F,Polytechnic
+453,Republic Polytechnic,0,1990,F,Polytechnic
+454,Republic Polytechnic,0,1991,F,Polytechnic
+455,Republic Polytechnic,0,1992,F,Polytechnic
+456,Republic Polytechnic,0,1993,F,Polytechnic
+457,Republic Polytechnic,0,1994,F,Polytechnic
+458,Republic Polytechnic,0,1995,F,Polytechnic
+459,Republic Polytechnic,0,1996,F,Polytechnic
+460,Republic Polytechnic,0,1997,F,Polytechnic
+461,Republic Polytechnic,0,1998,F,Polytechnic
+462,Republic Polytechnic,0,1999,F,Polytechnic
+463,Republic Polytechnic,0,2000,F,Polytechnic
+464,Republic Polytechnic,0,2001,F,Polytechnic
+465,Republic Polytechnic,0,2002,F,Polytechnic
+466,Republic Polytechnic,377,2003,F,Polytechnic
+467,Republic Polytechnic,865,2004,F,Polytechnic
+468,Republic Polytechnic,1759,2005,F,Polytechnic
+469,Republic Polytechnic,2790,2006,F,Polytechnic
+470,Republic Polytechnic,4205,2007,F,Polytechnic
+471,Republic Polytechnic,5257,2008,F,Polytechnic
+472,Republic Polytechnic,6304,2009,F,Polytechnic
+473,Republic Polytechnic,6729,2010,F,Polytechnic
+474,Republic Polytechnic,7209,2011,F,Polytechnic
+475,Republic Polytechnic,7583,2012,F,Polytechnic
+476,Republic Polytechnic,7910,2013,F,Polytechnic
+477,Republic Polytechnic,7914,2014,F,Polytechnic
+478,Republic Polytechnic,7736,2015,F,Polytechnic
+479,Republic Polytechnic,7343,2016,F,Polytechnic
+480,Republic Polytechnic,7022,2017,F,Polytechnic
+481,Republic Polytechnic,6703,2018,F,Polytechnic
+482,Republic Polytechnic,0,1982,MF,Polytechnic
+483,Republic Polytechnic,0,1983,MF,Polytechnic
+484,Republic Polytechnic,0,1984,MF,Polytechnic
+485,Republic Polytechnic,0,1985,MF,Polytechnic
+486,Republic Polytechnic,0,1986,MF,Polytechnic
+487,Republic Polytechnic,0,1987,MF,Polytechnic
+488,Republic Polytechnic,0,1988,MF,Polytechnic
+489,Republic Polytechnic,0,1989,MF,Polytechnic
+490,Republic Polytechnic,0,1990,MF,Polytechnic
+491,Republic Polytechnic,0,1991,MF,Polytechnic
+492,Republic Polytechnic,0,1992,MF,Polytechnic
+493,Republic Polytechnic,0,1993,MF,Polytechnic
+494,Republic Polytechnic,0,1994,MF,Polytechnic
+495,Republic Polytechnic,0,1995,MF,Polytechnic
+496,Republic Polytechnic,0,1996,MF,Polytechnic
+497,Republic Polytechnic,0,1997,MF,Polytechnic
+498,Republic Polytechnic,0,1998,MF,Polytechnic
+499,Republic Polytechnic,0,1999,MF,Polytechnic
+500,Republic Polytechnic,0,2000,MF,Polytechnic
+501,Republic Polytechnic,0,2001,MF,Polytechnic
+502,Republic Polytechnic,0,2002,MF,Polytechnic
+503,Republic Polytechnic,821,2003,MF,Polytechnic
+504,Republic Polytechnic,1907,2004,MF,Polytechnic
+505,Republic Polytechnic,3587,2005,MF,Polytechnic
+506,Republic Polytechnic,5479,2006,MF,Polytechnic
+507,Republic Polytechnic,8087,2007,MF,Polytechnic
+508,Republic Polytechnic,10188,2008,MF,Polytechnic
+509,Republic Polytechnic,12179,2009,MF,Polytechnic
+510,Republic Polytechnic,13003,2010,MF,Polytechnic
+511,Republic Polytechnic,13927,2011,MF,Polytechnic
+512,Republic Polytechnic,14520,2012,MF,Polytechnic
+513,Republic Polytechnic,14995,2013,MF,Polytechnic
+514,Republic Polytechnic,14952,2014,MF,Polytechnic
+515,Republic Polytechnic,14690,2015,MF,Polytechnic
+516,Republic Polytechnic,13915,2016,MF,Polytechnic
+517,Republic Polytechnic,13566,2017,MF,Polytechnic
+518,Republic Polytechnic,13142,2018,MF,Polytechnic
+519,Republic Polytechnic,0,1982,M,Polytechnic
+520,Republic Polytechnic,0,1983,M,Polytechnic
+521,Republic Polytechnic,0,1984,M,Polytechnic
+522,Republic Polytechnic,0,1985,M,Polytechnic
+523,Republic Polytechnic,0,1986,M,Polytechnic
+524,Republic Polytechnic,0,1987,M,Polytechnic
+525,Republic Polytechnic,0,1988,M,Polytechnic
+526,Republic Polytechnic,0,1989,M,Polytechnic
+527,Republic Polytechnic,0,1990,M,Polytechnic
+528,Republic Polytechnic,0,1991,M,Polytechnic
+529,Republic Polytechnic,0,1992,M,Polytechnic
+530,Republic Polytechnic,0,1993,M,Polytechnic
+531,Republic Polytechnic,0,1994,M,Polytechnic
+532,Republic Polytechnic,0,1995,M,Polytechnic
+533,Republic Polytechnic,0,1996,M,Polytechnic
+534,Republic Polytechnic,0,1997,M,Polytechnic
+535,Republic Polytechnic,0,1998,M,Polytechnic
+536,Republic Polytechnic,0,1999,M,Polytechnic
+537,Republic Polytechnic,0,2000,M,Polytechnic
+538,Republic Polytechnic,0,2001,M,Polytechnic
+539,Republic Polytechnic,0,2002,M,Polytechnic
+540,Republic Polytechnic,444,2003,M,Polytechnic
+541,Republic Polytechnic,1042,2004,M,Polytechnic
+542,Republic Polytechnic,1828,2005,M,Polytechnic
+543,Republic Polytechnic,2689,2006,M,Polytechnic
+544,Republic Polytechnic,3882,2007,M,Polytechnic
+545,Republic Polytechnic,4931,2008,M,Polytechnic
+546,Republic Polytechnic,5875,2009,M,Polytechnic
+547,Republic Polytechnic,6274,2010,M,Polytechnic
+548,Republic Polytechnic,6718,2011,M,Polytechnic
+549,Republic Polytechnic,6937,2012,M,Polytechnic
+550,Republic Polytechnic,7085,2013,M,Polytechnic
+551,Republic Polytechnic,7038,2014,M,Polytechnic
+552,Republic Polytechnic,6954,2015,M,Polytechnic
+553,Republic Polytechnic,6572,2016,M,Polytechnic
+554,Republic Polytechnic,6544,2017,M,Polytechnic
+555,Republic Polytechnic,6439,2018,M,Polytechnic
+556,Singapore Polytechnic,1069,1982,F,Polytechnic
+557,Singapore Polytechnic,1318,1983,F,Polytechnic
+558,Singapore Polytechnic,1679,1984,F,Polytechnic
+559,Singapore Polytechnic,1924,1985,F,Polytechnic
+560,Singapore Polytechnic,2041,1986,F,Polytechnic
+561,Singapore Polytechnic,2514,1987,F,Polytechnic
+562,Singapore Polytechnic,2905,1988,F,Polytechnic
+563,Singapore Polytechnic,3459,1989,F,Polytechnic
+564,Singapore Polytechnic,3878,1990,F,Polytechnic
+565,Singapore Polytechnic,4498,1991,F,Polytechnic
+566,Singapore Polytechnic,5073,1992,F,Polytechnic
+567,Singapore Polytechnic,5297,1993,F,Polytechnic
+568,Singapore Polytechnic,5361,1994,F,Polytechnic
+569,Singapore Polytechnic,5202,1995,F,Polytechnic
+570,Singapore Polytechnic,5180,1996,F,Polytechnic
+571,Singapore Polytechnic,5143,1997,F,Polytechnic
+572,Singapore Polytechnic,5316,1998,F,Polytechnic
+573,Singapore Polytechnic,5352,1999,F,Polytechnic
+574,Singapore Polytechnic,5408,2000,F,Polytechnic
+575,Singapore Polytechnic,5521,2001,F,Polytechnic
+576,Singapore Polytechnic,5670,2002,F,Polytechnic
+577,Singapore Polytechnic,5562,2003,F,Polytechnic
+578,Singapore Polytechnic,5233,2004,F,Polytechnic
+579,Singapore Polytechnic,5019,2005,F,Polytechnic
+580,Singapore Polytechnic,5084,2006,F,Polytechnic
+581,Singapore Polytechnic,5249,2007,F,Polytechnic
+582,Singapore Polytechnic,5605,2008,F,Polytechnic
+583,Singapore Polytechnic,6034,2009,F,Polytechnic
+584,Singapore Polytechnic,6453,2010,F,Polytechnic
+585,Singapore Polytechnic,6432,2011,F,Polytechnic
+586,Singapore Polytechnic,6327,2012,F,Polytechnic
+587,Singapore Polytechnic,6167,2013,F,Polytechnic
+588,Singapore Polytechnic,6175,2014,F,Polytechnic
+589,Singapore Polytechnic,6022,2015,F,Polytechnic
+590,Singapore Polytechnic,5766,2016,F,Polytechnic
+591,Singapore Polytechnic,5611,2017,F,Polytechnic
+592,Singapore Polytechnic,5559,2018,F,Polytechnic
+593,Singapore Polytechnic,5339,1982,MF,Polytechnic
+594,Singapore Polytechnic,6136,1983,MF,Polytechnic
+595,Singapore Polytechnic,7129,1984,MF,Polytechnic
+596,Singapore Polytechnic,7894,1985,MF,Polytechnic
+597,Singapore Polytechnic,8099,1986,MF,Polytechnic
+598,Singapore Polytechnic,9193,1987,MF,Polytechnic
+599,Singapore Polytechnic,9709,1988,MF,Polytechnic
+600,Singapore Polytechnic,10620,1989,MF,Polytechnic
+601,Singapore Polytechnic,11348,1990,MF,Polytechnic
+602,Singapore Polytechnic,12327,1991,MF,Polytechnic
+603,Singapore Polytechnic,13257,1992,MF,Polytechnic
+604,Singapore Polytechnic,13578,1993,MF,Polytechnic
+605,Singapore Polytechnic,13865,1994,MF,Polytechnic
+606,Singapore Polytechnic,14019,1995,MF,Polytechnic
+607,Singapore Polytechnic,13912,1996,MF,Polytechnic
+608,Singapore Polytechnic,13755,1997,MF,Polytechnic
+609,Singapore Polytechnic,13695,1998,MF,Polytechnic
+610,Singapore Polytechnic,13581,1999,MF,Polytechnic
+611,Singapore Polytechnic,13459,2000,MF,Polytechnic
+612,Singapore Polytechnic,13754,2001,MF,Polytechnic
+613,Singapore Polytechnic,14271,2002,MF,Polytechnic
+614,Singapore Polytechnic,14371,2003,MF,Polytechnic
+615,Singapore Polytechnic,13709,2004,MF,Polytechnic
+616,Singapore Polytechnic,13353,2005,MF,Polytechnic
+617,Singapore Polytechnic,13656,2006,MF,Polytechnic
+618,Singapore Polytechnic,14399,2007,MF,Polytechnic
+619,Singapore Polytechnic,14986,2008,MF,Polytechnic
+620,Singapore Polytechnic,15523,2009,MF,Polytechnic
+621,Singapore Polytechnic,15928,2010,MF,Polytechnic
+622,Singapore Polytechnic,15949,2011,MF,Polytechnic
+623,Singapore Polytechnic,15972,2012,MF,Polytechnic
+624,Singapore Polytechnic,15878,2013,MF,Polytechnic
+625,Singapore Polytechnic,15905,2014,MF,Polytechnic
+626,Singapore Polytechnic,15297,2015,MF,Polytechnic
+627,Singapore Polytechnic,14671,2016,MF,Polytechnic
+628,Singapore Polytechnic,14298,2017,MF,Polytechnic
+629,Singapore Polytechnic,14337,2018,MF,Polytechnic
+630,Singapore Polytechnic,4270,1982,M,Polytechnic
+631,Singapore Polytechnic,4818,1983,M,Polytechnic
+632,Singapore Polytechnic,5450,1984,M,Polytechnic
+633,Singapore Polytechnic,5970,1985,M,Polytechnic
+634,Singapore Polytechnic,6058,1986,M,Polytechnic
+635,Singapore Polytechnic,6679,1987,M,Polytechnic
+636,Singapore Polytechnic,6804,1988,M,Polytechnic
+637,Singapore Polytechnic,7161,1989,M,Polytechnic
+638,Singapore Polytechnic,7470,1990,M,Polytechnic
+639,Singapore Polytechnic,7829,1991,M,Polytechnic
+640,Singapore Polytechnic,8184,1992,M,Polytechnic
+641,Singapore Polytechnic,8281,1993,M,Polytechnic
+642,Singapore Polytechnic,8504,1994,M,Polytechnic
+643,Singapore Polytechnic,8817,1995,M,Polytechnic
+644,Singapore Polytechnic,8732,1996,M,Polytechnic
+645,Singapore Polytechnic,8612,1997,M,Polytechnic
+646,Singapore Polytechnic,8379,1998,M,Polytechnic
+647,Singapore Polytechnic,8229,1999,M,Polytechnic
+648,Singapore Polytechnic,8051,2000,M,Polytechnic
+649,Singapore Polytechnic,8233,2001,M,Polytechnic
+650,Singapore Polytechnic,8601,2002,M,Polytechnic
+651,Singapore Polytechnic,8809,2003,M,Polytechnic
+652,Singapore Polytechnic,8476,2004,M,Polytechnic
+653,Singapore Polytechnic,8334,2005,M,Polytechnic
+654,Singapore Polytechnic,8572,2006,M,Polytechnic
+655,Singapore Polytechnic,9150,2007,M,Polytechnic
+656,Singapore Polytechnic,9381,2008,M,Polytechnic
+657,Singapore Polytechnic,9489,2009,M,Polytechnic
+658,Singapore Polytechnic,9475,2010,M,Polytechnic
+659,Singapore Polytechnic,9517,2011,M,Polytechnic
+660,Singapore Polytechnic,9645,2012,M,Polytechnic
+661,Singapore Polytechnic,9711,2013,M,Polytechnic
+662,Singapore Polytechnic,9730,2014,M,Polytechnic
+663,Singapore Polytechnic,9275,2015,M,Polytechnic
+664,Singapore Polytechnic,8905,2016,M,Polytechnic
+665,Singapore Polytechnic,8687,2017,M,Polytechnic
+666,Singapore Polytechnic,8778,2018,M,Polytechnic
+667,SIT,0,1982,F,University
+668,SIT,0,1983,F,University
+669,SIT,0,1984,F,University
+670,SIT,0,1985,F,University
+671,SIT,0,1986,F,University
+672,SIT,0,1987,F,University
+673,SIT,0,1988,F,University
+674,SIT,0,1989,F,University
+675,SIT,0,1990,F,University
+676,SIT,0,1991,F,University
+677,SIT,0,1992,F,University
+678,SIT,0,1993,F,University
+679,SIT,0,1994,F,University
+680,SIT,0,1995,F,University
+681,SIT,0,1996,F,University
+682,SIT,0,1997,F,University
+683,SIT,0,1998,F,University
+684,SIT,0,1999,F,University
+685,SIT,0,2000,F,University
+686,SIT,0,2001,F,University
+687,SIT,0,2002,F,University
+688,SIT,0,2003,F,University
+689,SIT,0,2004,F,University
+690,SIT,0,2005,F,University
+691,SIT,0,2006,F,University
+692,SIT,0,2007,F,University
+693,SIT,0,2008,F,University
+694,SIT,0,2009,F,University
+695,SIT,275,2010,F,University
+696,SIT,732,2011,F,University
+697,SIT,1246,2012,F,University
+698,SIT,1317,2013,F,University
+699,SIT,1482,2014,F,University
+700,SIT,1693,2015,F,University
+701,SIT,2306,2016,F,University
+702,SIT,2626,2017,F,University
+703,SIT,2905,2018,F,University
+704,SIT,0,1982,MF,University
+705,SIT,0,1983,MF,University
+706,SIT,0,1984,MF,University
+707,SIT,0,1985,MF,University
+708,SIT,0,1986,MF,University
+709,SIT,0,1987,MF,University
+710,SIT,0,1988,MF,University
+711,SIT,0,1989,MF,University
+712,SIT,0,1990,MF,University
+713,SIT,0,1991,MF,University
+714,SIT,0,1992,MF,University
+715,SIT,0,1993,MF,University
+716,SIT,0,1994,MF,University
+717,SIT,0,1995,MF,University
+718,SIT,0,1996,MF,University
+719,SIT,0,1997,MF,University
+720,SIT,0,1998,MF,University
+721,SIT,0,1999,MF,University
+722,SIT,0,2000,MF,University
+723,SIT,0,2001,MF,University
+724,SIT,0,2002,MF,University
+725,SIT,0,2003,MF,University
+726,SIT,0,2004,MF,University
+727,SIT,0,2005,MF,University
+728,SIT,0,2006,MF,University
+729,SIT,0,2007,MF,University
+730,SIT,0,2008,MF,University
+731,SIT,0,2009,MF,University
+732,SIT,523,2010,MF,University
+733,SIT,1416,2011,MF,University
+734,SIT,2587,2012,MF,University
+735,SIT,3051,2013,MF,University
+736,SIT,3557,2014,MF,University
+737,SIT,4039,2015,MF,University
+738,SIT,5230,2016,MF,University
+739,SIT,6138,2017,MF,University
+740,SIT,6951,2018,MF,University
+741,SIT,0,1982,M,University
+742,SIT,0,1983,M,University
+743,SIT,0,1984,M,University
+744,SIT,0,1985,M,University
+745,SIT,0,1986,M,University
+746,SIT,0,1987,M,University
+747,SIT,0,1988,M,University
+748,SIT,0,1989,M,University
+749,SIT,0,1990,M,University
+750,SIT,0,1991,M,University
+751,SIT,0,1992,M,University
+752,SIT,0,1993,M,University
+753,SIT,0,1994,M,University
+754,SIT,0,1995,M,University
+755,SIT,0,1996,M,University
+756,SIT,0,1997,M,University
+757,SIT,0,1998,M,University
+758,SIT,0,1999,M,University
+759,SIT,0,2000,M,University
+760,SIT,0,2001,M,University
+761,SIT,0,2002,M,University
+762,SIT,0,2003,M,University
+763,SIT,0,2004,M,University
+764,SIT,0,2005,M,University
+765,SIT,0,2006,M,University
+766,SIT,0,2007,M,University
+767,SIT,0,2008,M,University
+768,SIT,0,2009,M,University
+769,SIT,248,2010,M,University
+770,SIT,684,2011,M,University
+771,SIT,1341,2012,M,University
+772,SIT,1734,2013,M,University
+773,SIT,2075,2014,M,University
+774,SIT,2346,2015,M,University
+775,SIT,2924,2016,M,University
+776,SIT,3512,2017,M,University
+777,SIT,4046,2018,M,University
+778,SMU,0,1982,F,University
+779,SMU,0,1983,F,University
+780,SMU,0,1984,F,University
+781,SMU,0,1985,F,University
+782,SMU,0,1986,F,University
+783,SMU,0,1987,F,University
+784,SMU,0,1988,F,University
+785,SMU,0,1989,F,University
+786,SMU,0,1990,F,University
+787,SMU,0,1991,F,University
+788,SMU,0,1992,F,University
+789,SMU,0,1993,F,University
+790,SMU,0,1994,F,University
+791,SMU,0,1995,F,University
+792,SMU,0,1996,F,University
+793,SMU,0,1997,F,University
+794,SMU,0,1998,F,University
+795,SMU,0,1999,F,University
+796,SMU,212,2000,F,University
+797,SMU,579,2001,F,University
+798,SMU,974,2002,F,University
+799,SMU,1469,2003,F,University
+800,SMU,1991,2004,F,University
+801,SMU,2239,2005,F,University
+802,SMU,2429,2006,F,University
+803,SMU,2758,2007,F,University
+804,SMU,2993,2008,F,University
+805,SMU,3295,2009,F,University
+806,SMU,3525,2010,F,University
+807,SMU,3523,2011,F,University
+808,SMU,3684,2012,F,University
+809,SMU,3789,2013,F,University
+810,SMU,3883,2014,F,University
+811,SMU,4062,2015,F,University
+812,SMU,4047,2016,F,University
+813,SMU,4193,2017,F,University
+814,SMU,4486,2018,F,University
+815,SMU,0,1982,MF,University
+816,SMU,0,1983,MF,University
+817,SMU,0,1984,MF,University
+818,SMU,0,1985,MF,University
+819,SMU,0,1986,MF,University
+820,SMU,0,1987,MF,University
+821,SMU,0,1988,MF,University
+822,SMU,0,1989,MF,University
+823,SMU,0,1990,MF,University
+824,SMU,0,1991,MF,University
+825,SMU,0,1992,MF,University
+826,SMU,0,1993,MF,University
+827,SMU,0,1994,MF,University
+828,SMU,0,1995,MF,University
+829,SMU,0,1996,MF,University
+830,SMU,0,1997,MF,University
+831,SMU,0,1998,MF,University
+832,SMU,0,1999,MF,University
+833,SMU,305,2000,MF,University
+834,SMU,803,2001,MF,University
+835,SMU,1389,2002,MF,University
+836,SMU,2182,2003,MF,University
+837,SMU,3010,2004,MF,University
+838,SMU,3781,2005,MF,University
+839,SMU,4259,2006,MF,University
+840,SMU,5178,2007,MF,University
+841,SMU,5721,2008,MF,University
+842,SMU,6331,2009,MF,University
+843,SMU,6721,2010,MF,University
+844,SMU,6853,2011,MF,University
+845,SMU,7108,2012,MF,University
+846,SMU,7297,2013,MF,University
+847,SMU,7515,2014,MF,University
+848,SMU,7740,2015,MF,University
+849,SMU,7827,2016,MF,University
+850,SMU,7979,2017,MF,University
+851,SMU,8182,2018,MF,University
+852,SMU,0,1982,M,University
+853,SMU,0,1983,M,University
+854,SMU,0,1984,M,University
+855,SMU,0,1985,M,University
+856,SMU,0,1986,M,University
+857,SMU,0,1987,M,University
+858,SMU,0,1988,M,University
+859,SMU,0,1989,M,University
+860,SMU,0,1990,M,University
+861,SMU,0,1991,M,University
+862,SMU,0,1992,M,University
+863,SMU,0,1993,M,University
+864,SMU,0,1994,M,University
+865,SMU,0,1995,M,University
+866,SMU,0,1996,M,University
+867,SMU,0,1997,M,University
+868,SMU,0,1998,M,University
+869,SMU,0,1999,M,University
+870,SMU,93,2000,M,University
+871,SMU,224,2001,M,University
+872,SMU,415,2002,M,University
+873,SMU,713,2003,M,University
+874,SMU,1019,2004,M,University
+875,SMU,1542,2005,M,University
+876,SMU,1830,2006,M,University
+877,SMU,2420,2007,M,University
+878,SMU,2728,2008,M,University
+879,SMU,3036,2009,M,University
+880,SMU,3196,2010,M,University
+881,SMU,3330,2011,M,University
+882,SMU,3424,2012,M,University
+883,SMU,3508,2013,M,University
+884,SMU,3632,2014,M,University
+885,SMU,3678,2015,M,University
+886,SMU,3780,2016,M,University
+887,SMU,3786,2017,M,University
+888,SMU,3696,2018,M,University
+889,SUSS,0,1982,F,University
+890,SUSS,0,1983,F,University
+891,SUSS,0,1984,F,University
+892,SUSS,0,1985,F,University
+893,SUSS,0,1986,F,University
+894,SUSS,0,1987,F,University
+895,SUSS,0,1988,F,University
+896,SUSS,0,1989,F,University
+897,SUSS,0,1990,F,University
+898,SUSS,0,1991,F,University
+899,SUSS,0,1992,F,University
+900,SUSS,0,1993,F,University
+901,SUSS,0,1994,F,University
+902,SUSS,0,1995,F,University
+903,SUSS,0,1996,F,University
+904,SUSS,0,1997,F,University
+905,SUSS,0,1998,F,University
+906,SUSS,0,1999,F,University
+907,SUSS,0,2000,F,University
+908,SUSS,0,2001,F,University
+909,SUSS,0,2002,F,University
+910,SUSS,0,2003,F,University
+911,SUSS,0,2004,F,University
+912,SUSS,0,2005,F,University
+913,SUSS,0,2006,F,University
+914,SUSS,0,2007,F,University
+915,SUSS,0,2008,F,University
+916,SUSS,0,2009,F,University
+917,SUSS,0,2010,F,University
+918,SUSS,0,2011,F,University
+919,SUSS,0,2012,F,University
+920,SUSS,0,2013,F,University
+921,SUSS,145,2014,F,University
+922,SUSS,330,2015,F,University
+923,SUSS,609,2016,F,University
+924,SUSS,1011,2017,F,University
+925,SUSS,1399,2018,F,University
+926,SUSS,0,1982,MF,University
+927,SUSS,0,1983,MF,University
+928,SUSS,0,1984,MF,University
+929,SUSS,0,1985,MF,University
+930,SUSS,0,1986,MF,University
+931,SUSS,0,1987,MF,University
+932,SUSS,0,1988,MF,University
+933,SUSS,0,1989,MF,University
+934,SUSS,0,1990,MF,University
+935,SUSS,0,1991,MF,University
+936,SUSS,0,1992,MF,University
+937,SUSS,0,1993,MF,University
+938,SUSS,0,1994,MF,University
+939,SUSS,0,1995,MF,University
+940,SUSS,0,1996,MF,University
+941,SUSS,0,1997,MF,University
+942,SUSS,0,1998,MF,University
+943,SUSS,0,1999,MF,University
+944,SUSS,0,2000,MF,University
+945,SUSS,0,2001,MF,University
+946,SUSS,0,2002,MF,University
+947,SUSS,0,2003,MF,University
+948,SUSS,0,2004,MF,University
+949,SUSS,0,2005,MF,University
+950,SUSS,0,2006,MF,University
+951,SUSS,0,2007,MF,University
+952,SUSS,0,2008,MF,University
+953,SUSS,0,2009,MF,University
+954,SUSS,0,2010,MF,University
+955,SUSS,0,2011,MF,University
+956,SUSS,0,2012,MF,University
+957,SUSS,0,2013,MF,University
+958,SUSS,217,2014,MF,University
+959,SUSS,489,2015,MF,University
+960,SUSS,896,2016,MF,University
+961,SUSS,1451,2017,MF,University
+962,SUSS,2049,2018,MF,University
+963,SUSS,0,1982,M,University
+964,SUSS,0,1983,M,University
+965,SUSS,0,1984,M,University
+966,SUSS,0,1985,M,University
+967,SUSS,0,1986,M,University
+968,SUSS,0,1987,M,University
+969,SUSS,0,1988,M,University
+970,SUSS,0,1989,M,University
+971,SUSS,0,1990,M,University
+972,SUSS,0,1991,M,University
+973,SUSS,0,1992,M,University
+974,SUSS,0,1993,M,University
+975,SUSS,0,1994,M,University
+976,SUSS,0,1995,M,University
+977,SUSS,0,1996,M,University
+978,SUSS,0,1997,M,University
+979,SUSS,0,1998,M,University
+980,SUSS,0,1999,M,University
+981,SUSS,0,2000,M,University
+982,SUSS,0,2001,M,University
+983,SUSS,0,2002,M,University
+984,SUSS,0,2003,M,University
+985,SUSS,0,2004,M,University
+986,SUSS,0,2005,M,University
+987,SUSS,0,2006,M,University
+988,SUSS,0,2007,M,University
+989,SUSS,0,2008,M,University
+990,SUSS,0,2009,M,University
+991,SUSS,0,2010,M,University
+992,SUSS,0,2011,M,University
+993,SUSS,0,2012,M,University
+994,SUSS,0,2013,M,University
+995,SUSS,72,2014,M,University
+996,SUSS,159,2015,M,University
+997,SUSS,287,2016,M,University
+998,SUSS,440,2017,M,University
+999,SUSS,650,2018,M,University
+1000,SUTD,0,1982,F,University
+1001,SUTD,0,1983,F,University
+1002,SUTD,0,1984,F,University
+1003,SUTD,0,1985,F,University
+1004,SUTD,0,1986,F,University
+1005,SUTD,0,1987,F,University
+1006,SUTD,0,1988,F,University
+1007,SUTD,0,1989,F,University
+1008,SUTD,0,1990,F,University
+1009,SUTD,0,1991,F,University
+1010,SUTD,0,1992,F,University
+1011,SUTD,0,1993,F,University
+1012,SUTD,0,1994,F,University
+1013,SUTD,0,1995,F,University
+1014,SUTD,0,1996,F,University
+1015,SUTD,0,1997,F,University
+1016,SUTD,0,1998,F,University
+1017,SUTD,0,1999,F,University
+1018,SUTD,0,2000,F,University
+1019,SUTD,0,2001,F,University
+1020,SUTD,0,2002,F,University
+1021,SUTD,0,2003,F,University
+1022,SUTD,0,2004,F,University
+1023,SUTD,0,2005,F,University
+1024,SUTD,0,2006,F,University
+1025,SUTD,0,2007,F,University
+1026,SUTD,0,2008,F,University
+1027,SUTD,0,2009,F,University
+1028,SUTD,0,2010,F,University
+1029,SUTD,0,2011,F,University
+1030,SUTD,149,2012,F,University
+1031,SUTD,249,2013,F,University
+1032,SUTD,363,2014,F,University
+1033,SUTD,522,2015,F,University
+1034,SUTD,551,2016,F,University
+1035,SUTD,603,2017,F,University
+1036,SUTD,626,2018,F,University
+1037,SUTD,0,1982,MF,University
+1038,SUTD,0,1983,MF,University
+1039,SUTD,0,1984,MF,University
+1040,SUTD,0,1985,MF,University
+1041,SUTD,0,1986,MF,University
+1042,SUTD,0,1987,MF,University
+1043,SUTD,0,1988,MF,University
+1044,SUTD,0,1989,MF,University
+1045,SUTD,0,1990,MF,University
+1046,SUTD,0,1991,MF,University
+1047,SUTD,0,1992,MF,University
+1048,SUTD,0,1993,MF,University
+1049,SUTD,0,1994,MF,University
+1050,SUTD,0,1995,MF,University
+1051,SUTD,0,1996,MF,University
+1052,SUTD,0,1997,MF,University
+1053,SUTD,0,1998,MF,University
+1054,SUTD,0,1999,MF,University
+1055,SUTD,0,2000,MF,University
+1056,SUTD,0,2001,MF,University
+1057,SUTD,0,2002,MF,University
+1058,SUTD,0,2003,MF,University
+1059,SUTD,0,2004,MF,University
+1060,SUTD,0,2005,MF,University
+1061,SUTD,0,2006,MF,University
+1062,SUTD,0,2007,MF,University
+1063,SUTD,0,2008,MF,University
+1064,SUTD,0,2009,MF,University
+1065,SUTD,0,2010,MF,University
+1066,SUTD,0,2011,MF,University
+1067,SUTD,327,2012,MF,University
+1068,SUTD,583,2013,MF,University
+1069,SUTD,886,2014,MF,University
+1070,SUTD,1235,2015,MF,University
+1071,SUTD,1381,2016,MF,University
+1072,SUTD,1545,2017,MF,University
+1073,SUTD,1658,2018,MF,University
+1074,SUTD,0,1982,M,University
+1075,SUTD,0,1983,M,University
+1076,SUTD,0,1984,M,University
+1077,SUTD,0,1985,M,University
+1078,SUTD,0,1986,M,University
+1079,SUTD,0,1987,M,University
+1080,SUTD,0,1988,M,University
+1081,SUTD,0,1989,M,University
+1082,SUTD,0,1990,M,University
+1083,SUTD,0,1991,M,University
+1084,SUTD,0,1992,M,University
+1085,SUTD,0,1993,M,University
+1086,SUTD,0,1994,M,University
+1087,SUTD,0,1995,M,University
+1088,SUTD,0,1996,M,University
+1089,SUTD,0,1997,M,University
+1090,SUTD,0,1998,M,University
+1091,SUTD,0,1999,M,University
+1092,SUTD,0,2000,M,University
+1093,SUTD,0,2001,M,University
+1094,SUTD,0,2002,M,University
+1095,SUTD,0,2003,M,University
+1096,SUTD,0,2004,M,University
+1097,SUTD,0,2005,M,University
+1098,SUTD,0,2006,M,University
+1099,SUTD,0,2007,M,University
+1100,SUTD,0,2008,M,University
+1101,SUTD,0,2009,M,University
+1102,SUTD,0,2010,M,University
+1103,SUTD,0,2011,M,University
+1104,SUTD,178,2012,M,University
+1105,SUTD,334,2013,M,University
+1106,SUTD,523,2014,M,University
+1107,SUTD,713,2015,M,University
+1108,SUTD,830,2016,M,University
+1109,SUTD,942,2017,M,University
+1110,SUTD,1032,2018,M,University
+1111,Temasek Polytechnic,0,1982,F,Polytechnic
+1112,Temasek Polytechnic,0,1983,F,Polytechnic
+1113,Temasek Polytechnic,0,1984,F,Polytechnic
+1114,Temasek Polytechnic,0,1985,F,Polytechnic
+1115,Temasek Polytechnic,0,1986,F,Polytechnic
+1116,Temasek Polytechnic,0,1987,F,Polytechnic
+1117,Temasek Polytechnic,0,1988,F,Polytechnic
+1118,Temasek Polytechnic,0,1989,F,Polytechnic
+1119,Temasek Polytechnic,552,1990,F,Polytechnic
+1120,Temasek Polytechnic,1006,1991,F,Polytechnic
+1121,Temasek Polytechnic,1490,1992,F,Polytechnic
+1122,Temasek Polytechnic,1826,1993,F,Polytechnic
+1123,Temasek Polytechnic,2156,1994,F,Polytechnic
+1124,Temasek Polytechnic,3026,1995,F,Polytechnic
+1125,Temasek Polytechnic,4076,1996,F,Polytechnic
+1126,Temasek Polytechnic,5157,1997,F,Polytechnic
+1127,Temasek Polytechnic,5942,1998,F,Polytechnic
+1128,Temasek Polytechnic,6300,1999,F,Polytechnic
+1129,Temasek Polytechnic,6446,2000,F,Polytechnic
+1130,Temasek Polytechnic,6501,2001,F,Polytechnic
+1131,Temasek Polytechnic,6579,2002,F,Polytechnic
+1132,Temasek Polytechnic,6462,2003,F,Polytechnic
+1133,Temasek Polytechnic,6302,2004,F,Polytechnic
+1134,Temasek Polytechnic,6776,2005,F,Polytechnic
+1135,Temasek Polytechnic,7236,2006,F,Polytechnic
+1136,Temasek Polytechnic,7541,2007,F,Polytechnic
+1137,Temasek Polytechnic,7587,2008,F,Polytechnic
+1138,Temasek Polytechnic,7676,2009,F,Polytechnic
+1139,Temasek Polytechnic,7804,2010,F,Polytechnic
+1140,Temasek Polytechnic,7894,2011,F,Polytechnic
+1141,Temasek Polytechnic,7855,2012,F,Polytechnic
+1142,Temasek Polytechnic,7934,2013,F,Polytechnic
+1143,Temasek Polytechnic,7900,2014,F,Polytechnic
+1144,Temasek Polytechnic,7585,2015,F,Polytechnic
+1145,Temasek Polytechnic,7115,2016,F,Polytechnic
+1146,Temasek Polytechnic,6802,2017,F,Polytechnic
+1147,Temasek Polytechnic,6688,2018,F,Polytechnic
+1148,Temasek Polytechnic,0,1982,MF,Polytechnic
+1149,Temasek Polytechnic,0,1983,MF,Polytechnic
+1150,Temasek Polytechnic,0,1984,MF,Polytechnic
+1151,Temasek Polytechnic,0,1985,MF,Polytechnic
+1152,Temasek Polytechnic,0,1986,MF,Polytechnic
+1153,Temasek Polytechnic,0,1987,MF,Polytechnic
+1154,Temasek Polytechnic,0,1988,MF,Polytechnic
+1155,Temasek Polytechnic,0,1989,MF,Polytechnic
+1156,Temasek Polytechnic,735,1990,MF,Polytechnic
+1157,Temasek Polytechnic,1472,1991,MF,Polytechnic
+1158,Temasek Polytechnic,2268,1992,MF,Polytechnic
+1159,Temasek Polytechnic,3107,1993,MF,Polytechnic
+1160,Temasek Polytechnic,3854,1994,MF,Polytechnic
+1161,Temasek Polytechnic,5443,1995,MF,Polytechnic
+1162,Temasek Polytechnic,7681,1996,MF,Polytechnic
+1163,Temasek Polytechnic,9806,1997,MF,Polytechnic
+1164,Temasek Polytechnic,11462,1998,MF,Polytechnic
+1165,Temasek Polytechnic,12230,1999,MF,Polytechnic
+1166,Temasek Polytechnic,12733,2000,MF,Polytechnic
+1167,Temasek Polytechnic,13143,2001,MF,Polytechnic
+1168,Temasek Polytechnic,13324,2002,MF,Polytechnic
+1169,Temasek Polytechnic,13117,2003,MF,Polytechnic
+1170,Temasek Polytechnic,12782,2004,MF,Polytechnic
+1171,Temasek Polytechnic,13582,2005,MF,Polytechnic
+1172,Temasek Polytechnic,14568,2006,MF,Polytechnic
+1173,Temasek Polytechnic,15243,2007,MF,Polytechnic
+1174,Temasek Polytechnic,15615,2008,MF,Polytechnic
+1175,Temasek Polytechnic,15791,2009,MF,Polytechnic
+1176,Temasek Polytechnic,15933,2010,MF,Polytechnic
+1177,Temasek Polytechnic,16020,2011,MF,Polytechnic
+1178,Temasek Polytechnic,16005,2012,MF,Polytechnic
+1179,Temasek Polytechnic,16250,2013,MF,Polytechnic
+1180,Temasek Polytechnic,16138,2014,MF,Polytechnic
+1181,Temasek Polytechnic,15425,2015,MF,Polytechnic
+1182,Temasek Polytechnic,14662,2016,MF,Polytechnic
+1183,Temasek Polytechnic,14239,2017,MF,Polytechnic
+1184,Temasek Polytechnic,14248,2018,MF,Polytechnic
+1185,Temasek Polytechnic,0,1982,M,Polytechnic
+1186,Temasek Polytechnic,0,1983,M,Polytechnic
+1187,Temasek Polytechnic,0,1984,M,Polytechnic
+1188,Temasek Polytechnic,0,1985,M,Polytechnic
+1189,Temasek Polytechnic,0,1986,M,Polytechnic
+1190,Temasek Polytechnic,0,1987,M,Polytechnic
+1191,Temasek Polytechnic,0,1988,M,Polytechnic
+1192,Temasek Polytechnic,0,1989,M,Polytechnic
+1193,Temasek Polytechnic,183,1990,M,Polytechnic
+1194,Temasek Polytechnic,466,1991,M,Polytechnic
+1195,Temasek Polytechnic,778,1992,M,Polytechnic
+1196,Temasek Polytechnic,1281,1993,M,Polytechnic
+1197,Temasek Polytechnic,1698,1994,M,Polytechnic
+1198,Temasek Polytechnic,2417,1995,M,Polytechnic
+1199,Temasek Polytechnic,3605,1996,M,Polytechnic
+1200,Temasek Polytechnic,4649,1997,M,Polytechnic
+1201,Temasek Polytechnic,5520,1998,M,Polytechnic
+1202,Temasek Polytechnic,5930,1999,M,Polytechnic
+1203,Temasek Polytechnic,6287,2000,M,Polytechnic
+1204,Temasek Polytechnic,6642,2001,M,Polytechnic
+1205,Temasek Polytechnic,6745,2002,M,Polytechnic
+1206,Temasek Polytechnic,6655,2003,M,Polytechnic
+1207,Temasek Polytechnic,6480,2004,M,Polytechnic
+1208,Temasek Polytechnic,6806,2005,M,Polytechnic
+1209,Temasek Polytechnic,7332,2006,M,Polytechnic
+1210,Temasek Polytechnic,7702,2007,M,Polytechnic
+1211,Temasek Polytechnic,8028,2008,M,Polytechnic
+1212,Temasek Polytechnic,8115,2009,M,Polytechnic
+1213,Temasek Polytechnic,8129,2010,M,Polytechnic
+1214,Temasek Polytechnic,8126,2011,M,Polytechnic
+1215,Temasek Polytechnic,8150,2012,M,Polytechnic
+1216,Temasek Polytechnic,8316,2013,M,Polytechnic
+1217,Temasek Polytechnic,8238,2014,M,Polytechnic
+1218,Temasek Polytechnic,7840,2015,M,Polytechnic
+1219,Temasek Polytechnic,7547,2016,M,Polytechnic
+1220,Temasek Polytechnic,7437,2017,M,Polytechnic
+1221,Temasek Polytechnic,7560,2018,M,Polytechnic
