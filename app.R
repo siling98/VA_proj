@@ -58,7 +58,7 @@ ges2 <- read_csv("data/cleaned/cleaned_GES2.csv", col_types = "fffffnniiii")
 ### Start of ui ###
 
 ui <- dashboardPage(
-    dashboardHeader(title = "StoryBoard",
+    dashboardHeader(title = "Team 6 - <Name>",
                     titleWidth = 250),
     dashboardSidebar(
         width = 250,
@@ -73,184 +73,226 @@ ui <- dashboardPage(
     dashboardBody(
         # Boxes need to be put in a row (or column)
         tabItems(
-            tabItem(tabName = "Intro",
+            tabItem(
+                tabName = "Intro",
                 fluidRow(
-                    box(plotOutput("plot1", height = 250)),
-                    
-                    box(
-                        title = "Controls",
-                        sliderInput("slider", "Number of observations:", 1, 100, 50)
-                    )
+                    column(1),
+                    column(10,
+                           h1("Introduction"),
+                           h2("Problem"),
+                           h4("aaa"),
+                           h2("Motivation"),
+                           h4("aaa"),
+                           h2("Objectives"),
+                           h4("aaa")),
+                    column(1)
                 )
             ),
-            tabItem(tabName = "Ranking",
-                    h2("Singapore has progressively upped its ranking over the years and clinched the first position for the 5th pillar (Higher Education and Training) of GCI since 2015-16."),
-                    selectInput("gci_category",
-                                "Category",
-                                choices = levels(gci_top_10$Series),
-                                width = "400px"),
-                    plotlyOutput("gci_ranking")
+            tabItem(
+                tabName = "Ranking",
+                fluidRow(
+                    column(1),
+                    column(10,
+                           h1("Global Competitiveness Index (GCI)"),
+                           h4("The GCI assesses the ability of countries to provide high levels of prosperity of citizens. There are 12 pillars of competitiveness. Here, we analyse the 5th pillar, namely Higher Education and Training, and its subcategories."),
+                           h4("The chart below displays the ranking among the top 10 countries for the selected category. Singapore is denoted by the red line. If Singapore is not among the top 10, each country will be represented by a different colour."),
+                           h4("Select an option from the filter to view the ranking by category (5th pillar - the overall, or its subcategories).")),
+                    column(1)
+                ),
+                fluidRow(
+                    column(1),
+                    column(10,
+                           selectInput("gci_category",
+                                       "Category",
+                                       choices = levels(gci_top_10$Series),
+                                       width = "400px"),
+                           plotlyOutput("gci_ranking")),
+                    column(1)
+                )
             ),
-            tabItem(tabName = "Enrollment",
-                h2("Singapore's Higher Education Enrollment"),
-                
+            tabItem(
+                tabName = "Enrollment",
                 fluidRow(
-                    column(6,
-                        sliderInput(inputId = "DateRange",
-                            label = "Year Range",
-                            min = 1993,
-                            max = 2018,
-                            value = c(1993, 2018),
-                            sep = ""
-                        )
-                    ),
-                    column(6,
-                           selectInput(inputId="gender",label="Gender",choices = c("All"="MF",
-                                                                                             "Male"="M",
-                                                                                             "Female"="F"),
-                                       selected = "All",multiple = F),
-                    )
-                    
+                    column(1),
+                    column(10,
+                           h1("Enrollment"),
+                           h4("The line charts show the number of enrollment for both polytechnic and university institutes over the years."),
+                           h4("Use the drop-down and slider to filter by gender and year range.")),
+                    column(1)
                 ),
                 fluidRow(
-                    box(title = "Polytechnic",
-                        width = 6,
-                        solidHeader = TRUE,
-                        status = "primary",
-                        plotlyOutput("Polyenrollement1",height = 250)),
-                    box(title = "University",
-                        width = 6,
-                        solidHeader = TRUE,
-                        status = "primary",
-                        plotlyOutput("Unienrollment1", height = 250))
-                    
+                    column(1),
+                    column(2,
+                           selectInput("gender",
+                                       "Gender",
+                                       choices = c("All" = "MF", "Male" = "M", "Female" = "F"),
+                                       selected = "All")),
+                    column(5,
+                           sliderInput("DateRange",
+                                       "Year Range",
+                                       min = 1993,
+                                       max = 2018,
+                                       value = c(1993, 2018),
+                                       sep = "")),
+                    column(4)
                 ),
                 fluidRow(
-                    column(6,
-                           sliderInput(inputId = "Year",
-                                       label = "Year",
+                    column(1),
+                    column(5,
+                           box(title = "Polytechnic",
+                               width = "100%",
+                               solidHeader = TRUE,
+                               status = "primary",
+                               plotlyOutput("Polyenrollement1", height = 250))),
+                    column(5,
+                           box(title = "University",
+                               width = "100%",
+                               solidHeader = TRUE,
+                               status = "primary",
+                               plotlyOutput("Unienrollment1", height = 250))),
+                    column(1)
+                ),
+                fluidRow(
+                    column(1),
+                    column(10,
+                           h4("The bubble charts show the breakdown of enrollment by course type for polytechnic and university."),
+                           h4("Use the drop-down and slider to filter by gender and year.")),
+                    column(1)
+                ),
+                fluidRow(
+                    column(1),
+                    column(2,
+                           selectInput("gender2",
+                                       "Gender",
+                                       choices = c("All" = "MF", "Male" = "M", "Female" = "F"),
+                                       selected = "All")),
+                    column(5,
+                           sliderInput("Year",
+                                       "Year",
                                        min = 1993,
                                        max = 2018,
                                        value = 2018,
-                                       sep = ""
-                           )
-                    ),
-                    column(6,
-                           selectInput(inputId="gender2",label="Gender",choices = c("All"="MF",
-                                                                                   "Male"="M",
-                                                                                   "Female"="F"),
-                                       selected = "All",multiple = F),
-                    )
+                                       sep = "")),
+                    column(4)
                 ),
-                
                 fluidRow(
-                    box(title = "Polytechnic (by course)", width = 6, solidHeader = TRUE, status = "primary", girafeOutput("Polyenrollement2", height = 250)),
-                    box(title = "University (by course)", width = 6, solidHeader = TRUE, status = "primary", girafeOutput("Unienrollment2", height = 250))
+                    column(1),
+                    column(5,
+                           box(title = "Polytechnic (by Course)",
+                               width = "100%",
+                               solidHeader = TRUE,
+                               status = "primary",
+                               girafeOutput("Polyenrollement2", height = 250))),
+                    column(5,
+                           box(title = "University (by Course)",
+                               width = "100%",
+                               solidHeader = TRUE,
+                               status = "primary",
+                               girafeOutput("Unienrollment2", height = 250))),
+                    column(1)
                 )
-                
             ),
-            tabItem(tabName = "Expenditure",
-                    h2("Government Expenditure"),
-                    fluidRow(
-                        box(
-                            width = 12,
-                            title = "Expenditure by Sector",
-                            plotlyOutput("expenditure_by_sector")
-                        )
-                    ),
-                    fluidRow(
-                        box(
-                            width = 12,
-                            title = "Expenditure by Sector",
-                            plotlyOutput("expenditure_by_education")
-                        )
-                    )
+            tabItem(
+                tabName = "Expenditure",
+                fluidRow(
+                    column(1),
+                    column(10,
+                           h1("Government Expenditure"),
+                           h4("The 100% stacked bar chart shows the proportion of government expenditure by sector. The education sector is shown at the top of each bar for ease of comparison over the years."),
+                           h4("The line chart shows the breakdown of education expenditure by level across year."),
+                           br()),
+                    column(1)
+                ),
+                fluidRow(
+                    column(1),
+                    column(5,
+                           box(title = "Expenditure (by Sector)",
+                               width = "100%",
+                               height = "625px",
+                               solidHeader = TRUE,
+                               status = "primary",
+                               plotlyOutput("expenditure_by_sector", height = "550px"))),
+                    column(5,
+                           box(title = "Expenditure of Education (by Level)",
+                               width = "100%",
+                               height = "625px",
+                               solidHeader = TRUE,
+                               status = "primary",
+                               plotlyOutput("expenditure_by_education", height = "550px"))),
+                    column(1)
+                )
             ),
-            tabItem(tabName = "Prospects",
-                    h2("How much can University Graduate expect to Earn?"),
-                    fluidRow(
-                        box(
-                            width = 6,
-                            # htmlOutput("selectInput_University")
-                            selectInput("university", "University",
-                                        choices = levels(ges$University),
-                                        selected = "National University of Singapore")
-                        ),
-                        box(
-                            width = 6,
-                            # htmlOutput("selectInput_School")
-                            selectInput("school", "School/Faculty",
-                                        choices = NULL)
-                        )
+            tabItem(
+                tabName = "Prospects",
+                fluidRow(
+                    column(1),
+                    column(10,
+                           h1("Graduate Employment Survey (GES)"),
+                           h4("The GES is an annual survey conducted by the Ministry of Education (MoE) and the 6 universities on the employment conditions after graduation."),
+                           h4("The bar chart shows the gross monthly mean salary of different degrees offered under a university and school/faculty in 2018."),
+                           h4("The line chart shows the 25th, 50th (median) and 75th percentile of the salary of one of the degrees across year. Click on any bar of a degree to see its salary percentiles."),
+                           h4("Use the filters to compare the gross monthly mean salary of the degrees offered by other universities and their schools/faculties.")),
+                    column(1)
+                ),
+                fluidRow(
+                    column(1),
+                    column(3,
+                           selectInput("university", "University",
+                                       choices = levels(ges$University),
+                                       selected = "National University of Singapore")),
+                    column(4,
+                           selectInput("school", "School/Faculty",
+                                       choices = NULL,
+                                       width = "85%")),
+                    column(4)
+                ),
+                fluidRow(
+                    column(1),
+                    column(10,
+                           align = "center",
+                           h3(textOutput("ges_mean_salary_by_degree_title")),
+                           plotlyOutput("ges_mean_salary_by_degree", height = "350px")),
+                    column(1)
+                ),
+                fluidRow(
+                    column(1),
+                    column(10,
+                           align = "center",
+                           h3(textOutput("ges_salary_percentile_title")),
+                           plotlyOutput("ges_salary_percentile", height = "350px")
                     ),
-                    fluidRow(
-                        column(
-                            width = 12,
-                            align = "center",
-                            h3(textOutput("ges_mean_salary_by_degree_title")),
-                            plotlyOutput("ges_mean_salary_by_degree", width = "85%")
-                        )
+                    column(1)
+                ),
+                fluidRow(
+                    column(1),
+                    column(10,
+                           br(),
+                           h4("The chart below shows a heatmap of the employment rate by university and field of study."),
+                           h4("Use the drop-down and slider to filter by whether there is honors/cum laude and year.")),
+                    column(1)
+                ),
+                fluidRow(
+                    column(1),
+                    column(2,
+                           selectInput("Hons", "Honors/Cum Laude",
+                                       choices = c("Yes" = "Yes", "No" = "No"),
+                                       selected = "No")),
+                    column(5,
+                           sliderInput("Year2", "Year",
+                                       min = 2013,
+                                       max = 2018,
+                                       value = 2018,
+                                       sep = "")),
+                    column(4)
+                ),
+                fluidRow(
+                    column(1),
+                    column(10,
+                           align = "center",
+                           plotlyOutput("ges_heatmap", height = "350px")
                     ),
-                    fluidRow(
-                        column(
-                            width = 12,
-                            align = "center",
-                            h3(textOutput("ges_salary_percentile_title")),
-                            plotlyOutput("ges_salary_percentile", width = "85%")
-                        )
-                    ),
-                    #heatmap
-                    fluidRow(
-                        column(6,
-                               sliderInput(inputId = "Year2",
-                                           label = "Year",
-                                           min = 2013,
-                                           max = 2018,
-                                           value = 2018,
-                                           sep = ""
-                               )
-                        ),
-                        # column(6,
-                        #        selectInput(inputId="Faculty",label="Faculty/School/Field of Study", choices = c("Accountancy" = "Accountancy",
-                        #                                                                                        "Arts & Social Sciences" = "Arts & Social Sciences", 
-                        #                                                                                        "Business" = "Business", 
-                        #                                                                                        "Computing and Information Systems" = "Computing and Information Systems", 
-                        #                                                                                        "Dentistry" = "Dentistry", 
-                        #                                                                                        "Design & Environment" = "Design & Environment", 
-                        #                                                                                        "DigiPen Institute of Technology" = "DigiPen Institute of Technology" , 
-                        #                                                                                        "Economics" = "Economics", 
-                        #                                                                                        "Engineering" = "Engineering", 
-                        #                                                                                        "Law" = "Law", 
-                        #                                                                                        "Medicine" = "Medicine", 
-                        #                                                                                        "Multidisciplinary" = "Multidisciplinary", 
-                        #                                                                                        "National Institute of Education (NIE)" = "National Institute of Education (NIE)", 
-                        #                                                                                        "Newcastle University" = "Newcastle University", 
-                        #                                                                                        "Sciences" = "Sciences", 
-                        #                                                                                        "Singapore Institute of Technology" = "Singapore Institute of Technology", 
-                        #                                                                                        "Technische Universität München" = "Technische Universität München", 
-                        #                                                                                        "The Culinary Institute of America" = "The Culinary Institute of America", 
-                        #                                                                                        "Trinity College Dublin" = "Trinity College Dublin", 
-                        #                                                                                        "University of Glasgow" = "University of Glasgow", 
-                        #                                                                                        "University of Liverpool" = "University of Liverpool", 
-                        #                                                                                        "University of Manchester" = "University of Manchester", 
-                        #                                                                                        "University of Nevada, Las Vegas" = "University of Nevada, Las Vegas", 
-                        #                                                                                        "Wheelock College" = "Wheelock College"),
-                        #                    selected = "Engineering",multiple = F)
-                        #        
-                        # )
-                        column(4,
-                               selectInput(inputId="Hons",label="Honors/Cum Laude",choices = c("Yes"="Yes",
-                                                                                               "No"="No"),
-                                           selected = "No",multiple = F)
-                        )
-                    ),
-                    fluidRow(
-                        column(
-                            width = 12,
-                            align = "center",
-                            plotlyOutput("ges_heatmap", width = "85%")
-                        )
-                    ),
+                    column(1)
+                )
             )
         )
             
@@ -264,15 +306,6 @@ ui <- dashboardPage(
 ### Start of server ###
 
 server <- function(session, input, output) {
-    set.seed(122)
-    histdata <- rnorm(500)
-    
-    # Introduction
-    output$plot1 <- renderPlot({
-        data <- histdata[seq_len(input$slider)]
-        hist(data)
-    })
-    
     # Global Competitiveness Index (Bump Chart)
     output$gci_ranking <- renderPlotly({
         gci_top_10_category <- gci_top_10 %>%
@@ -326,7 +359,8 @@ server <- function(session, input, output) {
             plot_ly(x = ~Year, y = ~Expenditure, color = ~`School Type`,
                     hoverinfo = "text",
                     text = ~paste("Type:", `School Type`, "<br>Year:", Year, "<br>Expenditure:", Expenditure)) %>%
-            add_lines()
+            add_lines() %>%
+            layout(legend = list(orientation = "h"))
     })
     
     # Graduate Employment Survey
@@ -373,7 +407,7 @@ server <- function(session, input, output) {
             droplevels()
         
         output$ges_mean_salary_by_degree_title <- renderText({
-            paste("Gross Monthly Mean Salary by Degree(s) under", input$school, "in", input$university)
+            paste("2018 Gross Monthly Mean Salary by Degree(s) under", input$school, "in", input$university)
         })
         
         output$ges_salary_percentile_title <- renderText({
