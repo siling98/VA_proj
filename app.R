@@ -58,7 +58,7 @@ ges2 <- read_csv("data/cleaned/cleaned_GES2.csv", col_types = "fffffnniiii")
 ### Start of ui ###
 
 ui <- dashboardPage(
-    dashboardHeader(title = "Team 6 - <Name>",
+    dashboardHeader(title = "Team 6",
                     titleWidth = 250),
     dashboardSidebar(
         width = 250,
@@ -80,11 +80,11 @@ ui <- dashboardPage(
                     column(10,
                            h1("Introduction"),
                            h2("Problem"),
-                           h4("aaa"),
+                           h4("Despite abundance of data, it is not easy for a post-secondary school student to make an informed decision on their education. This application will help a post-secondary school student gather insights via an interactive dashboard"),
                            h2("Motivation"),
-                           h4("aaa"),
-                           h2("Objectives"),
-                           h4("aaa")),
+                           h4("Education is the keystone to securing a better future. Many parents are aware of this fact and relentlessly seek information on the best education. However this task is not simple as data is consolidated by different agencies and hard to gain insights due to lack of an interactive dashboard for qualitative data analysis"),
+                           h2("Approach"),
+                           h4("Consolidate the data from different agencies into a central dashboard for analysis.The dashboard would include infographics and heat maps to allow qualitative data analysis")),
                     column(1)
                 )
             ),
