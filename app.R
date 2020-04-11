@@ -11,6 +11,7 @@ library(plotly)
 library(crosstalk)
 library(packcircles)
 library(shinydashboard)
+library(ggiraph)
 
 ### Start of data import ###
 
@@ -143,8 +144,8 @@ ui <- dashboardPage(
                 ),
                 
                 fluidRow(
-                    box(title = "Polytechnic (by course)", width = 6, solidHeader = TRUE, status = "primary", plotOutput("Polyenrollement2", height = 250)),
-                    box(title = "University (by course)", width = 6, solidHeader = TRUE, status = "primary", plotOutput("Unienrollment2", height = 250))
+                    box(title = "Polytechnic (by course)", width = 6, solidHeader = TRUE, status = "primary", girafeOutput("Polyenrollement2", height = 250)),
+                    box(title = "University (by course)", width = 6, solidHeader = TRUE, status = "primary", girafeOutput("Unienrollment2", height = 250))
                 )
                 
             ),
@@ -469,20 +470,33 @@ server <- function(session, input, output) {
             add_lines()
     })
     
-    output$Polyenrollement2 <- renderPlot({
+    output$Polyenrollement2 <- renderGirafe({
         filterdata1 <- filter(data_poly_enrollment_course, Year == input$Year & Sex == input$gender2)
         
-        data1 <- data.frame(group=paste("Group", filterdata1$First_Degree), value=filterdata1$Enrollment) 
-        data1$text <- paste("name: ",data1$group, "\n", "value:", data1$value)
+        data1 <- data.frame(group=paste(filterdata1$First_Degree), value=filterdata1$Enrollment) 
+        if (input$gender2 == "MF"){
+            genderpoly <- "ALL"
+        }
+        else if (input$gender == "F") {
+            genderpoly <- "Female"
+        }
+        else{
+            genderpoly <- "Male"
+        }
+        
+        data1$text <- paste("Course: ",data1$group, "\n", "Enrollment:", data1$value, "\n", "Gender:", genderpoly)
         
         packing1 <- circleProgressiveLayout(data1$value, sizetype='area')
         data1 <- cbind(data1, packing1)
         dat1.gg <- circleLayoutVertices(packing1, npoints=50)
+        dat1.gg$value <- rep(data1$value, each=51)
         
-        ggplot() + 
+        bubble1 <- ggplot() + 
             
             # Make the bubbles
-            geom_polygon(data = dat1.gg, aes(x, y, group = id, fill=as.factor(id)), colour = "black", alpha = 0.6) +
+            #geom_polygon(data = dat1.gg, aes(x, y, group = id, fill=as.factor(id)), colour = "black", alpha = 0.6) +
+            geom_polygon_interactive(data = dat1.gg, aes(x, y, group = id, fill=value, tooltip = data1$text[id], data_id = id), colour = "black", alpha = 0.6) +
+            scale_fill_distiller(palette = "BuPu", direction = 1 ) +
             
             # Add text in the center of each bubble + control its size
             geom_text(data = data1, aes(x, y, size=2, label = group)) +
@@ -490,34 +504,51 @@ server <- function(session, input, output) {
             
             # General theme:
             theme_void() + 
-            theme(legend.position="none") +
+            theme(legend.position="none", plot.margin=unit(c(0,0,0,0),"cm") ) + 
             coord_equal()
+        inBubble1 <- ggiraph(ggobj = bubble1, width_svg = 7, height_svg = 7)
     })
     
-    output$Unienrollment2 <- renderPlot({
+    output$Unienrollment2 <- renderGirafe({
         filterdata2 <- filter(data_uni_enrollment_course, Year == input$Year & Sex == input$gender2)
         
-        data2 <- data.frame(group=paste("Group", filterdata2$First_Degree), value=filterdata2$Enrollment) 
+        if (input$gender2 == "MF"){
+            genderuni <- "ALL"
+        }
+        else if (input$gender2 == "F"){
+            genderuni <- "Female"
+        }
+        else{
+            genderuni <- "Male"
+        }
+        
+        data2 <- data.frame(group=paste(filterdata2$First_Degree), value=filterdata2$Enrollment) 
+        data2$text <- paste("Course: ",data2$group, "\n", "Enrollment:", data2$value, "\n", "Gender:", genderuni)
         
         packing2 <- circleProgressiveLayout(data2$value, sizetype='area')
         data2 <- cbind(data2, packing2)
         
         dat2.gg <- circleLayoutVertices(packing2, npoints=50)
-        ggplot() + 
+        dat2.gg$value <- rep(data2$value, each=51)
+        
+        bubble2 <- ggplot() + 
             
             # Make the bubbles
-            geom_polygon(data = dat2.gg, aes(x, y, group = id, fill=as.factor(id)), colour = "black", alpha = 0.6) +
+            #geom_polygon(data = dat2.gg, aes(x, y, group = id, fill=as.factor(id)), colour = "black", alpha = 0.6) +
+            geom_polygon_interactive(data = dat2.gg, aes(x, y, group = id, fill=value, tooltip = data2$text[id], data_id = id), colour = "black", alpha = 0.6) +
+            scale_fill_distiller(palette = "BuPu", direction = 1 ) +
             
             # Add text in the center of each bubble + control its size
-            geom_text(data = data2, aes(x, y, size=value, label = group)) +
+            geom_text(data = data2, aes(x, y, size=2, label = group)) +
             scale_size_continuous(range = c(1,4)) +
             
             # General theme:
             theme_void() + 
-            theme(legend.position="none") +
+            theme(legend.position="none", plot.margin=unit(c(0,0,0,0),"cm") ) + 
             coord_equal()
+        inBubble2 <- ggiraph(ggobj = bubble2, width_svg = 7, height_svg = 7)
         
-    })
+    })#end of enrollment dashboard
     
     #heat map for dashboard4
     output$ges_heatmap <- renderPlotly({
