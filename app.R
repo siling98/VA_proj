@@ -1,8 +1,7 @@
-#IS 428 Visual Analystics Group Project
-#Author: Group 6
+# IS428 Visual Analytics for Business Intelligence (G1)
+# AY2019-20 Term 2
+# Author: Team 6
 
-
-## app.R ##
 library(readr)
 library(plyr)
 library(dplyr)
@@ -10,8 +9,10 @@ library(forcats)
 library(randomcoloR)
 library(plotly)
 library(crosstalk)
-library(shinydashboard)
 library(packcircles)
+library(shinydashboard)
+
+### Start of data import ###
 
 # Global Competitiveness Index
 gci <- read_csv("data/cleaned/cleaned_GCI.csv", col_types = "ffif")
@@ -22,13 +23,13 @@ gci_top_10 <- gci %>%
     filter(Rank %in% (1:10)) %>%
     arrange(Series, desc(Year), Rank)
 
-# Enrolment
+# Enrollment
 data_enrollment_institute <- read.csv("data/cleaned/cleaned_enrollment-by-institute.csv")
 data_enrollment_institute <- filter(data_enrollment_institute, Enrollment > 0)
 data_poly_enrollment_institute <- filter(data_enrollment_institute, Institute_Type == "Polytechnic")
 data_uni_enrollment_institute <- filter(data_enrollment_institute, Institute_Type == "University")
 
-#Enrollment by course
+# Enrollment by Course
 data_enrollment_course <- read_csv("data/cleaned/cleaned_enrollment-by-first-degree.csv")
 data_enrollment_course <- filter(data_enrollment_course, Enrollment > 0)
 data_enrollment_course <- filter(data_enrollment_course, First_Degree != "Males Total")
@@ -47,8 +48,13 @@ expenditure_sector <- expenditure_sector %>%
 
 # Graduate Employment Survey
 ges <- read_csv("data/cleaned/cleaned_GES.csv", col_types = "ffffnniiii")
-
 ges2 <- read_csv("data/cleaned/cleaned_GES2.csv", col_types = "ffffnniiiiii")
+
+### End of data import ###
+
+###
+
+### Start of ui ###
 
 ui <- dashboardPage(
     dashboardHeader(title = "StoryBoard",
@@ -105,15 +111,17 @@ ui <- dashboardPage(
                     )
                     
                 ),
-                
-                
                 fluidRow(
-                    
-                    
-                    box(title = "Polytechnic", width = 6, solidHeader = TRUE, status = "primary", plotOutput("Polyenrollement1", height = 250, click = "plot_click1")),
-                    
-                    
-                    box(title = "University", width = 6, solidHeader = TRUE, status = "primary", plotOutput("Unienrollment1", height = 250, click = "plot_click1"))
+                    box(title = "Polytechnic",
+                        width = 6,
+                        solidHeader = TRUE,
+                        status = "primary",
+                        plotlyOutput("Polyenrollement1",height = 250)),
+                    box(title = "University",
+                        width = 6,
+                        solidHeader = TRUE,
+                        status = "primary",
+                        plotlyOutput("Unienrollment1", height = 250))
                     
                 ),
                 fluidRow(
@@ -248,9 +256,21 @@ ui <- dashboardPage(
     )
 )
 
+### End of ui ###
+
+###
+
+### Start of server ###
+
 server <- function(session, input, output) {
     set.seed(122)
     histdata <- rnorm(500)
+    
+    # Introduction
+    output$plot1 <- renderPlot({
+        data <- histdata[seq_len(input$slider)]
+        hist(data)
+    })
     
     # Global Competitiveness Index (Bump Chart)
     output$gci_ranking <- renderPlotly({
@@ -318,18 +338,6 @@ server <- function(session, input, output) {
         updateSelectInput(session, "school", choices = levels(ges_university_school$School))
     })
     
-    # output$selectInput_University <- renderUI({
-    #     selectInput("university", "University", choices = levels(ges$University), selected = "National University of Singapore")
-    # })
-    # 
-    # output$selectInput_School <- renderUI({
-    #     ges_university_school <- ges %>%
-    #         filter(University == input$university) %>%
-    #         droplevels()
-    #     
-    #     selectInput("school", "School/Faculty", choices = levels(ges_university_school$School), selected = "School of Computing")
-    # })
-    
     output$ges_mean_salary_by_degree <- renderPlotly({
         ges_bar <- ges %>%
             filter(Year == 2018,
@@ -346,16 +354,6 @@ server <- function(session, input, output) {
             add_bars() %>%
             layout(xaxis = list(title = "Gross Monthly Mean"))
     })
-    
-    # output$ges_salary_percentile_title <- renderText({
-    #     ges_event <- event_data(event = "plotly_click", source = "degree")
-    #     
-    #     if (is.null(ges_event)) {
-    #         "Salary Percentiles for Bachelor of Computing (Computer Science) Degree"
-    #     } else {
-    #         paste("Salary Percentiles for", ges_event$key, "Degree")
-    #     }
-    # })
     
     observe({
         ges_degree_2018 <- ges %>%
@@ -452,58 +450,23 @@ server <- function(session, input, output) {
         })
     })
     
-    # output$ges_salary_percentile <- renderPlotly({
-    #     ges_event <- event_data(event = "plotly_click", source = "degree")
-    # 
-    #     if (is.null(ges_event)) {
-    #         ges_time <- ges %>%
-    #             filter(University == input$university,
-    #                    School == input$school) %>%
-    #             droplevels() %>%
-    #             filter(Degree == sample(Degree, 1)) %>%
-    #             droplevels()
-    #     } else {
-    #         ges_time <- ges %>%
-    #             filter(University == input$university,
-    #                    School == input$school,
-    #                    Degree == ges_event$key) %>%
-    #             droplevels()
-    #     }
-    #     
-    #     ges_time %>%
-    #         plot_ly(x = ~Year) %>%
-    #         add_trace(y = ~`Gross Monthly 25th Percentile`, name = "Gross Monthly 25th Percentile", type = "scatter", mode = "lines+markers",
-    #                   hoverinfo = "text",
-    #                   text = ~paste0("Degree: ", Degree, "<br>Year: ", Year, "<br>25th Percentile: $", `Gross Monthly 25th Percentile`)) %>%
-    #         add_trace(y = ~`Gross Monthly Median`, name = "Gross Monthly Median", type = "scatter", mode = "lines+markers",
-    #                   hoverinfo = "text",
-    #                   text = ~paste0("Degree: ", Degree, "<br>Year: ", Year, "<br>Median: $", `Gross Monthly Median`)) %>%
-    #         add_trace(y = ~`Gross Monthly 75th Percentile`, name = "Gross Monthly 75th Percentile", type = "scatter", mode = "lines+markers",
-    #                   hoverinfo = "text",
-    #                   text = ~paste0("Degree: ", Degree, "<br>Year: ", Year, "<br>75th Percentile: $", `Gross Monthly 75th Percentile`)) %>%
-    #         layout(title = ~Degree, yaxis = list(title = "Salary"))
-    # })
-    
-    ###
-    
-    output$plot1 <- renderPlot({
-        data <- histdata[seq_len(input$slider)]
-        hist(data)
-    })
-    ###start of enrollment
-    output$Polyenrollement1 <- renderPlot({
-        
-        poly1 <- data_poly_enrollment_institute  %>%  filter(Year >= input$DateRange[1] & Year <= input$DateRange[2] & Sex == input$gender) %>% ggplot(aes(x=Year, y = Enrollment))
-        poly1 <- poly1 + geom_line(aes(colour = Institute))
-        poly1
+    # Enrollment
+    output$Polyenrollement1 <- renderPlotly({
+        data_poly_enrollment_institute %>%
+            filter(Year >= input$DateRange[1] & Year <= input$DateRange[2] & Sex == input$gender) %>%
+            plot_ly(x = ~Year, y = ~Enrollment, color = ~Institute,
+                    hoverinfo = "text",
+                    text = ~paste("Institute:", Institute, "<br>Year:", Year, "<br>Enrollment:", Enrollment)) %>%
+            add_lines()
     })
     
-    output$Unienrollment1 <- renderPlot({
-        
-        uni1 <- data_uni_enrollment_institute  %>%  filter(Year >= input$DateRange[1] & Year <= input$DateRange[2] & Sex == input$gender) %>% ggplot(aes(x=Year, y = Enrollment))
-        uni1 <- uni1 + geom_line(aes(colour = Institute))
-        uni1
-        
+    output$Unienrollment1 <- renderPlotly({
+        data_uni_enrollment_institute %>%
+            filter(Year >= input$DateRange[1] & Year <= input$DateRange[2] & Sex == input$gender) %>%
+            plot_ly(x = ~Year, y = ~Enrollment, color = ~Institute,
+                    hoverinfo = "text",
+                    text = ~paste("Institute:", Institute, "<br>Year:", Year, "<br>Enrollment:", Enrollment)) %>%
+            add_lines()
     })
     
     output$Polyenrollement2 <- renderPlot({
@@ -555,7 +518,6 @@ server <- function(session, input, output) {
             coord_equal()
         
     })
-    #end of enrollment
     
     #heat map for dashboard4
     output$ges_heatmap <- renderPlotly({
@@ -569,5 +531,9 @@ server <- function(session, input, output) {
         # layout(margin = list(l=1000))
     })
 }
+
+### End of server ###
+
+###
 
 shinyApp(ui, server)
