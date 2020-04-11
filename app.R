@@ -192,7 +192,7 @@ ui <- dashboardPage(
                     ),
                     #heatmap
                     fluidRow(
-                        column(4,
+                        column(6,
                                sliderInput(inputId = "Year2",
                                            label = "Year",
                                            min = 2013,
@@ -201,8 +201,8 @@ ui <- dashboardPage(
                                            sep = ""
                                )
                         ),
-                        column(4,
-                               selectInput(inputId="school",label="Faculty/School/Field of Study", choices = c("Accountancy" = "Accountancy",
+                        column(6,
+                               selectInput(inputId="Faculty",label="Faculty/School/Field of Study", choices = c("Accountancy" = "Accountancy",
                                                                                                                "Arts & Social Sciences" = "Arts & Social Sciences", 
                                                                                                                "Business" = "Business", 
                                                                                                                "Computing and Information Systems" = "Computing and Information Systems", 
@@ -228,12 +228,12 @@ ui <- dashboardPage(
                                                                                                                "Wheelock College" = "Wheelock College"),
                                            selected = "Engineering",multiple = F)
                                
-                        ),
-                        column(4,
-                               selectInput(inputId="Hons",label="Honors/Cum Laude",choices = c("Yes"="Yes",
-                                                                                               "No"="No"),
-                                           selected = "No",multiple = F)
                         )
+                        # column(4,
+                        #        selectInput(inputId="Hons",label="Honors/Cum Laude",choices = c("Yes"="Yes",
+                        #                                                                        "No"="No"),
+                        #                    selected = "No",multiple = F)
+                        # )
                     ),
                     fluidRow(
                         column(
@@ -559,9 +559,10 @@ server <- function(session, input, output) {
     
     #heat map for dashboard4
     output$ges_heatmap <- renderPlotly({
-        ges2 <- filter(ges2, Year == input$Year2 & School == input$school)
-        p <- plot_ly(x=ges2$Degree, y=ges2$University,
-                     z = ges2$Overall_Employment_Rate,
+        ges3 <- filter(ges2, Year == input$Year2 & School == input$Faculty)
+        #ges4 <- filter(ges3, Hons == input$Hons)
+        p <- plot_ly(x=ges3$Degree, y=ges3$University,
+                     z = ges3$Overall_Employment_Rate,
                      type = "heatmap",
                      colorscale= "Blue")
         #            showscale = F) %>%
