@@ -49,7 +49,7 @@ expenditure_sector <- expenditure_sector %>%
 
 # Graduate Employment Survey
 ges <- read_csv("data/cleaned/cleaned_GES.csv", col_types = "ffffnniiii")
-ges2 <- read_csv("data/cleaned/cleaned_GES2.csv", col_types = "ffffnniiiiii")
+ges2 <- read_csv("data/cleaned/cleaned_GES2.csv", col_types = "fffffnniiii")
 
 ### End of data import ###
 
@@ -210,39 +210,39 @@ ui <- dashboardPage(
                                            sep = ""
                                )
                         ),
-                        column(6,
-                               selectInput(inputId="Faculty",label="Faculty/School/Field of Study", choices = c("Accountancy" = "Accountancy",
-                                                                                                               "Arts & Social Sciences" = "Arts & Social Sciences", 
-                                                                                                               "Business" = "Business", 
-                                                                                                               "Computing and Information Systems" = "Computing and Information Systems", 
-                                                                                                               "Dentistry" = "Dentistry", 
-                                                                                                               "Design & Environment" = "Design & Environment", 
-                                                                                                               "DigiPen Institute of Technology" = "DigiPen Institute of Technology" , 
-                                                                                                               "Economics" = "Economics", 
-                                                                                                               "Engineering" = "Engineering", 
-                                                                                                               "Law" = "Law", 
-                                                                                                               "Medicine" = "Medicine", 
-                                                                                                               "Multidisciplinary" = "Multidisciplinary", 
-                                                                                                               "National Institute of Education (NIE)" = "National Institute of Education (NIE)", 
-                                                                                                               "Newcastle University" = "Newcastle University", 
-                                                                                                               "Sciences" = "Sciences", 
-                                                                                                               "Singapore Institute of Technology" = "Singapore Institute of Technology", 
-                                                                                                               "Technische Universität München" = "Technische Universität München", 
-                                                                                                               "The Culinary Institute of America" = "The Culinary Institute of America", 
-                                                                                                               "Trinity College Dublin" = "Trinity College Dublin", 
-                                                                                                               "University of Glasgow" = "University of Glasgow", 
-                                                                                                               "University of Liverpool" = "University of Liverpool", 
-                                                                                                               "University of Manchester" = "University of Manchester", 
-                                                                                                               "University of Nevada, Las Vegas" = "University of Nevada, Las Vegas", 
-                                                                                                               "Wheelock College" = "Wheelock College"),
-                                           selected = "Engineering",multiple = F)
-                               
-                        )
-                        # column(4,
-                        #        selectInput(inputId="Hons",label="Honors/Cum Laude",choices = c("Yes"="Yes",
-                        #                                                                        "No"="No"),
-                        #                    selected = "No",multiple = F)
+                        # column(6,
+                        #        selectInput(inputId="Faculty",label="Faculty/School/Field of Study", choices = c("Accountancy" = "Accountancy",
+                        #                                                                                        "Arts & Social Sciences" = "Arts & Social Sciences", 
+                        #                                                                                        "Business" = "Business", 
+                        #                                                                                        "Computing and Information Systems" = "Computing and Information Systems", 
+                        #                                                                                        "Dentistry" = "Dentistry", 
+                        #                                                                                        "Design & Environment" = "Design & Environment", 
+                        #                                                                                        "DigiPen Institute of Technology" = "DigiPen Institute of Technology" , 
+                        #                                                                                        "Economics" = "Economics", 
+                        #                                                                                        "Engineering" = "Engineering", 
+                        #                                                                                        "Law" = "Law", 
+                        #                                                                                        "Medicine" = "Medicine", 
+                        #                                                                                        "Multidisciplinary" = "Multidisciplinary", 
+                        #                                                                                        "National Institute of Education (NIE)" = "National Institute of Education (NIE)", 
+                        #                                                                                        "Newcastle University" = "Newcastle University", 
+                        #                                                                                        "Sciences" = "Sciences", 
+                        #                                                                                        "Singapore Institute of Technology" = "Singapore Institute of Technology", 
+                        #                                                                                        "Technische Universität München" = "Technische Universität München", 
+                        #                                                                                        "The Culinary Institute of America" = "The Culinary Institute of America", 
+                        #                                                                                        "Trinity College Dublin" = "Trinity College Dublin", 
+                        #                                                                                        "University of Glasgow" = "University of Glasgow", 
+                        #                                                                                        "University of Liverpool" = "University of Liverpool", 
+                        #                                                                                        "University of Manchester" = "University of Manchester", 
+                        #                                                                                        "University of Nevada, Las Vegas" = "University of Nevada, Las Vegas", 
+                        #                                                                                        "Wheelock College" = "Wheelock College"),
+                        #                    selected = "Engineering",multiple = F)
+                        #        
                         # )
+                        column(4,
+                               selectInput(inputId="Hons",label="Honors/Cum Laude",choices = c("Yes"="Yes",
+                                                                                               "No"="No"),
+                                           selected = "No",multiple = F)
+                        )
                     ),
                     fluidRow(
                         column(
@@ -552,7 +552,7 @@ server <- function(session, input, output) {
     
     #heat map for dashboard4
     output$ges_heatmap <- renderPlotly({
-        ges3 <- filter(ges2, Year == input$Year2 & School == input$Faculty)
+        ges3 <- filter(ges2, Year == input$Year2 & Hons == input$Hons)
         #ges4 <- filter(ges3, Hons == input$Hons)
         p <- plot_ly(x=ges3$Degree, y=ges3$University,
                      z = ges3$Overall_Employment_Rate,
