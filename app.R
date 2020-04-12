@@ -45,7 +45,8 @@ expenditure_education <- read_csv("data/cleaned/cleaned_expenditure_by_education
 
 expenditure_sector <- expenditure_sector %>%
     group_by(Year) %>%
-    mutate(Percent = Expenditure / sum(Expenditure) * 100)
+    mutate(Percent = Expenditure / sum(Expenditure) * 100) %>%
+    mutate(`Expenditure in Billion` = paste0("$", round((Expenditure / 1000000000), 2), "B"))
 
 # Graduate Employment Survey
 ges <- read_csv("data/cleaned/cleaned_GES.csv", col_types = "ffffnniiii")
@@ -349,7 +350,7 @@ server <- function(session, input, output) {
         expenditure_sector %>%
             plot_ly(x = ~Year, y = ~Percent, color = ~fct_rev(Sector),
                     hoverinfo = "text",
-                    text = ~paste0("The government spent ", round(Percent, 2), "% of the total expenditure on ", tolower(Sector), " in ", Year, ".")) %>%
+                    text = ~paste0("The government spent ", round(Percent, 2), "% of the total expenditure on ", tolower(Sector), " in ", Year, ".", "<br>This amounts to ", `Expenditure in Billion`, ".")) %>%
             add_bars() %>%
             layout(barmode = "stack")
     })
