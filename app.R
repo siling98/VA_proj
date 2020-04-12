@@ -58,7 +58,7 @@ ges2 <- read_csv("data/cleaned/cleaned_GES2.csv", col_types = "fffffnniiii")
 ### Start of ui ###
 
 ui <- dashboardPage(
-    dashboardHeader(title = "Team 6",
+    dashboardHeader(title = "T6 - Growth Signal",
                     titleWidth = 250),
     dashboardSidebar(
         width = 250,
@@ -80,9 +80,9 @@ ui <- dashboardPage(
                     column(10,
                            h1("Introduction"),
                            h2("Problem"),
-                           h4("Despite abundance of data, it is not easy for a post-secondary school student to make an informed decision on their education. This application will help a post-secondary school student gather insights via an interactive dashboard"),
+                           h4("Despite abundance of data, it is not easy for a post-secondary school student to make an informed decision on their education. This application will help a post-secondary school student gather insights via an interactive dashboard."),
                            h2("Motivation"),
-                           h4("Education is the keystone to securing a better future. Many parents are aware of this fact and relentlessly seek information on the best education. However this task is not simple as data is consolidated by different agencies and hard to gain insights due to lack of an interactive dashboard for qualitative data analysis"),
+                           h4("Education is the keystone to securing a better future. Many parents are aware of this fact and relentlessly seek information on the best education. However this task is not simple as data is consolidated by different agencies and therefore it is difficult to gain insights especially an overall picture. With so many tools and possibilities available for data visualisation, we have decided to compile the data and create an interactive dashboard for the parents and young adults alike."),
                            h2("Approach"),
                            h4("Consolidate the data from different agencies into a central dashboard for analysis.The dashboard would include infographics and heat maps to allow qualitative data analysis")),
                     column(1)
@@ -289,7 +289,7 @@ ui <- dashboardPage(
                     column(1),
                     column(10,
                            align = "center",
-                           plotlyOutput("ges_heatmap", height = "350px")
+                           plotlyOutput("ges_heatmap", height = "500px")
                     ),
                     column(1)
                 )
@@ -582,18 +582,21 @@ server <- function(session, input, output) {
             coord_equal()
         inBubble2 <- ggiraph(ggobj = bubble2, width_svg = 7, height_svg = 7)
         
-    })#end of enrollment dashboard
+    })
     
-    #heat map for dashboard4
     output$ges_heatmap <- renderPlotly({
         ges3 <- filter(ges2, Year == input$Year2 & Hons == input$Hons)
-        #ges4 <- filter(ges3, Hons == input$Hons)
-        p <- plot_ly(x=ges3$Degree, y=ges3$University,
-                     z = ges3$Overall_Employment_Rate,
-                     type = "heatmap",
-                     colorscale= "Blue")
-        #            showscale = F) %>%
-        # layout(margin = list(l=1000))
+        
+        ges3 %>%
+            plot_ly(x = ~Degree, y = ~University, z = ~Overall_Employment_Rate,
+                    type = "heatmap", colors = "Greens", colorbar = list(title = "Overall Employment Rate"),
+                    hoverinfo = "text",
+                    text = ~paste("University:", University,
+                                  "<br>Field of Study:", Degree,
+                                  "<br>Overall Employment Rate:", Overall_Employment_Rate)) %>%
+            layout(width = 1000,
+                   margin = list(b = 200),
+                   xaxis = list(tickangle = 55))
     })
 }
 
