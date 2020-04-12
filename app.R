@@ -511,7 +511,7 @@ server <- function(session, input, output) {
         if (input$gender2 == "MF"){
             genderpoly <- "ALL"
         }
-        else if (input$gender == "F") {
+        else if (input$gender2 == "F") {
             genderpoly <- "Female"
         }
         else{
@@ -592,7 +592,7 @@ server <- function(session, input, output) {
                     type = "heatmap", colors = "Greens", colorbar = list(title = "Overall Employment Rate"),
                     hoverinfo = "text",
                     text = ~paste("University:", University,
-                                  "<br>Field of Study:", Degree,
+                                  "<br>Degree:", Degree,
                                   "<br>Overall Employment Rate:", Overall_Employment_Rate)) %>%
             layout(width = 1000,
                    margin = list(b = 200),
