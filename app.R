@@ -84,8 +84,14 @@ ui <- dashboardPage(
                            h4("Despite abundance of data, it is not easy for a post-secondary school student to make an informed decision on their education. This application will help a post-secondary school student gather insights via an interactive dashboard."),
                            h2("Motivation"),
                            h4("Education is the keystone to securing a better future. Many parents are aware of this fact and relentlessly seek information on the best education. However this task is not simple as data is consolidated by different agencies and therefore it is difficult to gain insights especially an overall picture. With so many tools and possibilities available for data visualisation, we have decided to compile the data and create an interactive dashboard for the parents and young adults alike."),
-                           h2("Approach"),
-                           h4("Consolidate the data from different agencies into a central dashboard for analysis.The dashboard would include infographics and heat maps to allow qualitative data analysis")),
+                           h2("Objectives"),
+                           h4(tags$b("Target:"), "Post-secondary individuals"),
+                           h4("Many of the available data such as Graduate Employment Survey, Enrolment of students in institutions of higher education and government expenditure are located either on various institutions’ website, government generated reports or on data sites. The general reader is unable to get the full information on higher learning institutions in Singapore."),
+                           h4("As such, our dashboard will fulfil the following objectives:"),
+                           h4(tags$li("Visualise Singapore’s ranking in various metrics of GCI’s 5th pillar (higher Education and Training) over time")),
+                           h4(tags$li("Identify enrolment demographic across different institutions and courses and how they changed over time")),
+                           h4(tags$li("Comparison of Governments’ efforts in developing Polytechnics and Universities with different sectors and other levels of education")),
+                           h4(tags$li("Identify the courses which churns out the most successful graduates by employment rates and starting income"))),
                     column(1)
                 )
             ),
